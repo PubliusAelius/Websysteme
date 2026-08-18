@@ -1,0 +1,9 @@
+Responsive Webdesign – Anpassung an Desktop, Tablet und Smartphone
+Browserübergreifende Kompatibilität – Chrome, Firefox, Edge und Safari
+W3C-konforme Umsetzung mit gültigem HTML und CSS
+Übersichtliche und intuitive Benutzeroberfläche
+Fahrzeugbezogene Webseite mit übersichtlicher Darstellung der Inhalte
+Funktionale Navigation zwischen den Bereichen/Seiten
+Einheitliches Design über die gesamte Webseite
+Saubere Trennung von HTML, CSS und JavaScript
+Funktionalität auch bei unterschiedlichen Bildschirmgrößen und Auflösungen
