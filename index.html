@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Sorgt dafür, dass die Webseite auf Smartphones korrekt skaliert wird -->
     <title>Johnny Sins</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
-      <nav></nav>
+      <nav>
+        <ul>
+          <li>><a href="#hero">Start</a></li>
+          <li>><a href="#features">Features</a></li>
+          <li>><a href="#technische-daten">Technische-daten</a></li>
+          <li>><a href="#Galerie">Galerie</a></li>
+          <li>><a href="#Impressum">Impressum</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <section id="hero"></section>
+      <section id="hero">
+        <div class="hero-inhalt">
+          <h1>Perfomance, design und Komfort in einem Auto vereint.</h1>
+
+          <a href="#techniche-daten">teschniche Daten ansehen</a>
+        </div>
+        <figure>
+          <img
+            src="MAINP.jpg"
+            alt="schräge Auto ansicht eines mercedes S
+        coupes"
+          />
+        </figure>
+      </section>
 
       <section id="features">
-        <!-- Einzelne, inhaltlich eigenständige Feature-Bereiche -->
+        <h2>Features</h2>
+
         <article>Design</article>
         <article>Technik</article>
         <article>Performance</article>
@@ -25,6 +49,8 @@
 
       <section id="technische-daten">
         <dl>
+          <h2>Technische Daten</h2>
+
           <dt>Leistung</dt>
           <dd>367 kw (500ps)</dd>
 
@@ -39,7 +65,7 @@
         </dl>
       </section>
 
-      <section id="galerie">
+      <section id="Galerie">
         <h2>Bilder galeria</h2>
 
         <div class="galerie-bilder">
@@ -103,6 +129,10 @@
             <figcaption>---</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section id="Impressum">
+        <h2>Impressum</h2>
       </section>
     </main>
 
