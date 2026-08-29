@@ -20,7 +20,7 @@ body {
   gap: 2rem;
   padding: 4rem;
 }
-
+/* HERO - Text */
 .hero-inhalt {
   flex: 2;
   max-width: 32rem;
@@ -29,6 +29,7 @@ body {
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
+/* HERO - CTA */
 .hero-inhalt a {
   display: inline-block;
   margin-top: 1rem;
@@ -43,4 +44,39 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+#features {
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
+}
+
+.feature-grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+#features {
+  outline: 2px solid red;
+}
+
+.feature-grid {
+  outline: 2px solid yellow;
+}
+.feature-grid article {
+  outline: 2px solid yellow;
+}
+.feature-grid h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+.feature-grid article {
+  padding: 2rem;
+  background-color: #111f2e;
+  border: 1px solid #8aa3b8;
 }
