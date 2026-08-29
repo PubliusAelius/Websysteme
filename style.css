@@ -60,16 +60,6 @@ body {
   gap: 2rem;
 }
 
-#features {
-  outline: 2px solid red;
-}
-
-.feature-grid {
-  outline: 2px solid yellow;
-}
-.feature-grid article {
-  outline: 2px solid yellow;
-}
 .feature-grid h3 {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.8rem;
@@ -79,4 +69,18 @@ body {
   padding: 2rem;
   background-color: #111f2e;
   border: 1px solid #8aa3b8;
+}
+
+#technische-daten {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border: solid red;
+}
+
+.datengrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  border: solid red;
 }
