@@ -9,26 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
   </head>
 
   <body>
     <header>
       <nav>
         <a class="projektname" href="#hero">
-        
-          
-            <img class="LOGO" src="assets/logo_sc.svg" alt="SC Logo" />
-            
-            <span>S Coupe <br />vehicle Showcase</span>
+          <img class="LOGO" src="assets/logo_sc.svg" alt="SC Logo" />
 
-            </a>
-          
-        </div>
+          <span>S Coupe <br />vehicle Showcase</span>
+        </a>
 
         <ul>
           <li><a href="#hero">Start</a></li>
@@ -42,9 +38,9 @@
 
     <main>
       <section id="hero">
-         <video class="hero-video" autoplay muted loop playsinline>
-        <source src="Galerie section/BLACK DEVIL _ MERCEDES BENZ S63 AMG.mp4" type="video/mp4">
-    </video>
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="Galerie section/hero.mp4" type="video/mp4" />
+        </video>
 
         <div class="hero-inhalt">
           <h1>Perfomance, design und Komfort in einem Auto vereint.</h1>
@@ -94,43 +90,48 @@
 
           <dl class="datengrid">
             <div class="datenpunkt">
-              <img src="assets/icon_leistung.svg" alt="" class="ICON">
+              <img src="assets/icon_leistung.svg" alt="" class="ICON" />
               <div class="DATENTEXT">
-              <dt>Leistung</dt>
-              <dd> 367 kw (500ps)</dd>
-              </div>
-
-            </div>
-
-            <div class="datenpunkt">
-              <img src="assets/icon_performance_speedometer.svg" alt="" class="ICON">
-               <div class="DATENTEXT">
-              <dt>0-100</dt>
-              <dd>4.4s</dd>
+                <dt>Leistung</dt>
+                <dd>367 kw (500ps)</dd>
               </div>
             </div>
+
             <div class="datenpunkt">
-              <img src="assets/icon_vmax.svg" alt="" class="ICON">
+              <img
+                src="assets/icon_performance_speedometer.svg"
+                alt=""
+                class="ICON"
+              />
               <div class="DATENTEXT">
-              <dt>V MAX</dt>
-              <dd>250</dd>
-            </div>
+                <dt>0-100</dt>
+                <dd>4.4s</dd>
+              </div>
             </div>
             <div class="datenpunkt">
-              <img src="assets/icon_verbrauch_fuel.svg" alt="" class="ICON">
+              <img src="assets/icon_vmax.svg" alt="" class="ICON" />
               <div class="DATENTEXT">
-              <dt>Verbrauch</dt>
-              <dd>Gottlos hoch</dd>
+                <dt>V MAX</dt>
+                <dd>250</dd>
+              </div>
+            </div>
+            <div class="datenpunkt">
+              <img src="assets/icon_verbrauch_fuel.svg" alt="" class="ICON" />
+              <div class="DATENTEXT">
+                <dt>Verbrauch</dt>
+                <dd>Gottlos hoch</dd>
               </div>
             </div>
           </dl>
         </div>
-        <figure>
-          <img
-            src="Galerie section/SEITE.png"
-            alt="Seitenansicht des Fahrzeugs"
-          />
-        </figure>
+        <div class="VIDEO_2">
+          <model-viewer
+            class="auto-3d"
+            src="assets/models/s65_amg.glb"
+            camera-controls
+          >
+          </model-viewer>
+        </div>
       </section>
 
       <section id="Galerie">
