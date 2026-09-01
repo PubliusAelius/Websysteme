@@ -1,0 +1,24 @@
+#features {
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
+}
+
+.feature-grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.feature-grid h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+.feature-grid article {
+  padding: 2rem;
+  background-color: #111f2e;
+  border: 1px solid #8aa3b8;
+}

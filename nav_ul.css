@@ -1,0 +1,30 @@
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LOGO {
+  width: 5rem;
+  height: 5rem;
+}
+
+nav a {
+  color: #f2f0eb;
+  text-decoration: none;
+}
+.projektname {
+  display: flex;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  gap: 0rem;
+  align-items: center;
+}
