@@ -6,11 +6,25 @@
   padding: 4rem;
   border-top: 1px solid #24384b;
   border-bottom: 1px solid #24384b;
+  background: linear-gradient(135deg, #1c222a 40%, #252a30 70%, #4f382c 100%);
+  
+   background: linear-gradient(
+    to bottom,
+    #24272b 0%,
+    #1b1f24 20%,
+    #2b211c 50%,
+    #1b1f24 80%,
+    #24272b 100%
+  );
+  );
+}
+.technische-inhalt h2 {
+  font-size: 3rem;
 }
 
 .datengrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 21rem);
   gap: 2rem;
 }
 
@@ -20,6 +34,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: transform 0.63s ease;
+  border-radius: 1rem;
+  min-height: 9rem;
+  background-color: #252a30;
+}
+
+.datenpunkt:hover {
+  transform: translate(-20px);
+  border-color: #b47113;
 }
 .ICON {
   width: 5rem;
@@ -51,15 +74,6 @@
   display: block;
 }
 
-.VIDEO_2 {
-  flex: 1;
-}
-
-.drive {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 .auto-3d {
   width: 100%;
   height: 30rem;

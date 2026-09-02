@@ -8,7 +8,7 @@ h2 {
 
 body {
   margin: 0;
-  background-color: #000000;
+  background: linear-gradient(135deg, #1b1f24 0%, #24272b 65%, #3a2a22 100%);
   color: #f2f0eb;
   font-family: "Inter", sans-serif;
 }
