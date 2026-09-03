@@ -16,9 +16,9 @@ background: linear-gradient(
   rgba(58, 42, 34, 0.45) 75%,
   transparent 100%
 );
- 
-  );
+ ),
 }
+
 .technische-inhalt h2 {
   font-size: 3rem;
   font-weight: 900;

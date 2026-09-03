@@ -64,3 +64,36 @@
   font-size: 2rem;
   margin: 0 0 0.5rem;
 }
+
+.feature-link {
+  display: block;
+  position: relative;
+  z-index: 10;
+
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  cursor: pointer;
+}
+
+.feature-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover .feature-card {
+  transform: scale(1.02);
+}
+
+/* Verhindert, dass Overlays den Klick abfangen */
+.feature-card::before,
+.feature-card::after {
+  pointer-events: none;
+}
+
+.feature-content {
+  pointer-events: none;
+}
