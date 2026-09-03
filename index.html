@@ -111,6 +111,9 @@
               <div class="DATENTEXT">
                 <dt>0-100</dt>
                 <dd>4.4s</dd>
+                <button class="video-button"type button>
+                Video Ansehen
+                </button>
               </div>
             </div>
             <div class="datenpunkt">
@@ -132,12 +135,26 @@
         <div class="Transparent">
           <figure>
             <img
-              src="Galerie section/transparent.jfif"
+              src="Galerie section/Trans.png"
               alt="Transparente Technik ansicht"
             />
           </figure>
         </div>
       </section>
+
+<dialog id="beschleunigung-dialog">
+
+<video controls preload="metadata">
+
+<source src="Galerie section/0_100.mp4" type="video/mp4">
+
+</video>
+
+<button class="dialog-schliessen" type="button">X</button>
+
+</dialog>
+
+      </dialog>
 
       <section id="Galerie">
         <h2>GALERIE</h2>
@@ -251,5 +268,18 @@
 
     <foote class="hallos"></footer>
   </body>
+  <script>
+  const videoButton = document.querySelector(".video-button");
+  const dialog = document.querySelector("#beschleunigung-dialog");
+  const schliessenButton = document.querySelector(".dialog-schliessen");
+
+  videoButton.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  schliessenButton.addEventListener("click", () => {
+    dialog.close();
+  });
+</script>
 </html>
 
