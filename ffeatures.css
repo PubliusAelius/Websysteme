@@ -1,24 +1,66 @@
 #features {
-  padding-top: 4rem;
-  padding-right: 4rem;
-  padding-left: 4rem;
-  padding-bottom: 2rem;
+  padding: 4rem 4rem 2rem;
 }
 
 .feature-grid {
   padding-top: 2rem;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+
+  width: 100%;
+}
+
+.feature-card {
+  min-height: 350px;
+  padding: 2rem;
+  border-radius: 16px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1px solid #ffffff;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.feature-card.interior {
+  background-image: url("Galerie\ section/PorscheSeiteCabrio.jpg");
+}
+
+.feature-card.specs {
+  background-image: url("Galerie\ section/PorscheSeite.jpg");
+
+}
+
+.feature-card.VS{
+  background-image: url("Galerie\ section/2Porsche.jpg");
+}
+
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.feature-content {
+  position: relative;
+  z-index: 1;
 }
 
 .feature-grid h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  margin-top: 0;
-}
-.feature-grid article {
-  padding: 2rem;
-  background-color: #111f2e;
-  border: 1px solid #8aa3b8;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
 }
