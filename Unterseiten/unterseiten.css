@@ -1,49 +1,455 @@
-* {
+/* ==================================================
+   GRUNDEINSTELLUNGEN
+   ================================================== */
+
+   * {
     box-sizing: border-box;
   }
   
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
   body {
     margin: 0;
+  
     min-height: 100vh;
   
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #15171b;
   
-    background: #15171b;
     color: white;
   
     font-family: Arial, sans-serif;
   }
   
+  
   main {
-    text-align: center;
+    width: 100%;
   }
   
-  h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
   
-  p {
-    margin-bottom: 2rem;
-  }
+  /* ==================================================
+     GEMEINSAMER ZURÜCK-BUTTON IM HERO
+     ================================================== */
   
-  .zurueck-button {
+  .hero-zurueck {
+    position: absolute;
+  
+    top: 2rem;
+    left: 2rem;
+  
+    z-index: 5;
+  
     display: inline-block;
   
-    padding: 12px 24px;
+    padding: 0.8rem 1.2rem;
   
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+  
     border-radius: 8px;
   
+    background-color: rgba(21, 23, 27, 0.4);
+  
     color: white;
+  
     text-decoration: none;
   
-    transition: 0.3s;
+    backdrop-filter: blur(6px);
+  
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
   }
   
-  .zurueck-button:hover {
-    background: white;
-    color: #15171b;
+  
+  .hero-zurueck:hover {
+    background-color: rgba(21, 23, 27, 0.85);
+  
+    border-color: white;
+  
+    transform: translateX(-3px);
+  }
+  
+  
+  /* ==================================================
+     SPECS HERO
+     ================================================== */
+  
+  .specs-hero {
+    position: relative;
+  
+    width: 100%;
+  
+    height: 70vh;
+  
+    overflow: hidden;
+  }
+  
+  
+  .specs-hero-bild {
+    position: absolute;
+  
+    inset: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+    object-position: center;
+  
+    z-index: 0;
+  }
+  
+  
+  .specs-hero::after {
+    content: "";
+  
+    position: absolute;
+  
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    height: 30vh;
+  
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(21, 23, 27, 0.5) 45%,
+      #15171b 100%
+    );
+  
+    z-index: 1;
+  }
+  
+  
+  .specs-hero-inhalt {
+    position: absolute;
+  
+    left: 8%;
+    bottom: 12%;
+  
+    text-align: left;
+  
+    z-index: 2;
+  }
+  
+  
+  .specs-hero-inhalt p {
+    margin: 0 0 0.5rem;
+  
+    font-size: 1.1rem;
+  
+    letter-spacing: 0.12rem;
+  
+    opacity: 0.8;
+  }
+  
+  
+  .specs-hero-inhalt h1 {
+    margin: 0;
+  
+    font-size: clamp(3rem, 7vw, 7rem);
+  
+    line-height: 0.95;
+  }
+  
+  
+  /* ==================================================
+     SPECS BEREICH
+     ================================================== */
+  
+  .specs-bereich {
+    width: min(90%, 1000px);
+  
+    margin: 0 auto;
+  
+    padding: 3rem 0 6rem;
+  }
+  
+  
+  .specs-tabelle {
+    width: 100%;
+  
+    border-collapse: collapse;
+  }
+  
+  
+  .specs-tabelle tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  
+  .specs-tabelle th,
+  .specs-tabelle td {
+    padding: 1.3rem 0;
+  
+    text-align: left;
+  }
+  
+  
+  .specs-tabelle th {
+    width: 40%;
+  
+    font-size: 1rem;
+  
+    font-weight: 500;
+  
+    color: rgba(255, 255, 255, 0.65);
+  }
+  
+  
+  .specs-tabelle td {
+    font-size: 1.05rem;
+  
+    font-weight: 600;
+  }
+  
+  
+  /* ==================================================
+     INTERIOR HERO
+     ================================================== */
+  
+  .interior-hero {
+    position: relative;
+  
+    width: 100%;
+  
+    height: 58vh;
+  
+    overflow: hidden;
+  }
+  
+  
+  .interior-hero-bild {
+    position: absolute;
+  
+    inset: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+    object-position: center;
+  
+    z-index: 0;
+  }
+  
+  
+  .interior-hero::after {
+    content: "";
+  
+    position: absolute;
+  
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    height: 22vh;
+  
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(21, 23, 27, 0.5) 45%,
+      #15171b 100%
+    );
+  
+    z-index: 1;
+  }
+  
+  
+  .interior-hero-inhalt {
+    position: absolute;
+  
+    left: 8%;
+    bottom: 10%;
+  
+    text-align: left;
+  
+    z-index: 2;
+  }
+  
+  
+  .interior-hero-inhalt p {
+    margin: 0 0 0.5rem;
+  
+    font-size: 1.1rem;
+  
+    letter-spacing: 0.12rem;
+  
+    opacity: 0.8;
+  }
+  
+  
+  .interior-hero-inhalt h1 {
+    margin: 0;
+  
+    font-size: clamp(3rem, 7vw, 6rem);
+  
+    line-height: 0.95;
+  }
+  
+  
+  /* ==================================================
+     INTERIOR BEREICH
+     ================================================== */
+  
+  .interior-bereich {
+    width: 100%;
+  
+    padding: 1.5rem 0 4rem;
+  
+    overflow: hidden;
+  }
+  
+  
+  /* ==================================================
+     INTERIOR CAROUSEL
+     ================================================== */
+  
+  .interior-carousel {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 2rem;
+  
+    width: 100%;
+  
+    padding: 2rem 20vw;
+  
+    overflow-x: auto;
+  
+    scroll-snap-type: x mandatory;
+  
+    scroll-behavior: smooth;
+  
+    scrollbar-width: thin;
+  }
+  
+  
+  /* ==================================================
+     EINZELNE INTERIOR BILDER
+     ================================================== */
+  
+  .interior-slide {
+    flex: 0 0 60vw;
+  
+    height: 55vh;
+  
+    scroll-snap-align: center;
+  
+    border-radius: 12px;
+  
+    overflow: hidden;
+  
+    opacity: 0.65;
+  
+    transform: scale(0.94);
+  
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  
+  
+  .interior-slide:hover {
+    opacity: 1;
+  
+    transform: scale(1);
+  }
+  
+  
+  .interior-slide img {
+    width: 100%;
+    height: 100%;
+  
+    display: block;
+  
+    object-fit: cover;
+  }
+  
+  
+  /* ==================================================
+     RESPONSIVE
+     ================================================== */
+  
+  @media (max-width: 700px) {
+  
+    .hero-zurueck {
+      top: 1rem;
+      left: 1rem;
+  
+      padding: 0.7rem 1rem;
+  
+      font-size: 0.9rem;
+    }
+  
+  
+    .specs-hero {
+      height: 55vh;
+    }
+  
+  
+    .specs-hero::after {
+      height: 22vh;
+    }
+  
+  
+    .specs-hero-inhalt {
+      left: 5%;
+      bottom: 8%;
+    }
+  
+  
+    .specs-bereich {
+      width: 90%;
+  
+      padding-top: 2rem;
+    }
+  
+  
+    .specs-tabelle th,
+    .specs-tabelle td {
+      padding: 1rem 0.5rem;
+    }
+  
+  
+    .specs-tabelle th {
+      width: 42%;
+    }
+  
+  
+    .interior-hero {
+      height: 50vh;
+    }
+  
+  
+    .interior-hero::after {
+      height: 18vh;
+    }
+  
+  
+    .interior-hero-inhalt {
+      left: 5%;
+      bottom: 8%;
+    }
+  
+  
+    .interior-carousel {
+      gap: 1rem;
+  
+      padding: 2rem 10vw;
+    }
+  
+  
+    .interior-slide {
+      flex-basis: 80vw;
+  
+      height: 42vh;
+    }
+  
   }
