@@ -1,0 +1,170 @@
+/* ==================================================
+   IMPRESSUM / FOOTER
+   ================================================== */
+
+   .footer-impressum {
+    width: 100%;
+  
+    padding: 70px 7% 30px;
+  
+    background: #111317;
+  
+    color: white;
+  
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  
+  /* DIE 4 BEREICHE NEBENEINANDER */
+  
+  .footer-impressum-grid {
+    width: 100%;
+  
+    display: grid !important;
+  
+    grid-template-columns: repeat(4, 1fr) !important;
+  
+    gap: 0;
+  }
+  
+  
+  /* EINZELNER BEREICH */
+  
+  .footer-impressum-box {
+    min-height: 170px;
+  
+    padding: 10px 40px;
+  
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  
+  /* erste Spalte links ohne unnötigen Abstand */
+  
+  .footer-impressum-box:first-child {
+    padding-left: 0;
+  }
+  
+  
+  /* letzte Spalte ohne Linie rechts */
+  
+  .footer-impressum-box:last-child {
+    border-right: none;
+  }
+  
+  
+  /* ÜBERSCHRIFT */
+  
+  .footer-impressum-box h2 {
+    margin: 0 0 22px;
+  
+    font-size: 18px;
+  
+    font-weight: 600;
+  
+    color: #ffffff;
+  }
+  
+  
+  /* TEXT */
+  
+  .footer-impressum-box p {
+    margin: 0;
+  
+    font-size: 14px;
+  
+    line-height: 1.8;
+  
+    color: rgba(255, 255, 255, 0.58);
+  }
+  
+  
+  /* ==================================================
+     UNTERE FOOTER-ZEILE
+     ================================================== */
+  
+  .footer-impressum-unten {
+    margin-top: 45px;
+  
+    padding-top: 22px;
+  
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  
+    display: flex;
+  
+    justify-content: space-between;
+  
+    align-items: center;
+  }
+  
+  
+  .footer-impressum-unten p {
+    margin: 0;
+  
+    font-size: 13px;
+  
+    color: rgba(255, 255, 255, 0.35);
+  }
+  
+  
+  .footer-impressum-unten a {
+    color: rgba(255, 255, 255, 0.7);
+  
+    text-decoration: none;
+  
+    font-size: 14px;
+  
+    transition: color 0.3s ease;
+  }
+  
+  
+  .footer-impressum-unten a:hover {
+    color: white;
+  }
+  
+  
+  /* ==================================================
+     RESPONSIVE
+     ================================================== */
+  
+  @media (max-width: 900px) {
+  
+    .footer-impressum-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  
+  
+    .footer-impressum-box {
+      margin-bottom: 35px;
+    }
+  
+  }
+  
+  
+  @media (max-width: 600px) {
+  
+    .footer-impressum-grid {
+      grid-template-columns: 1fr !important;
+    }
+  
+  
+    .footer-impressum-box {
+      min-height: auto;
+  
+      padding: 25px 0;
+  
+      border-right: none;
+  
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  
+  
+    .footer-impressum-unten {
+      flex-direction: column;
+  
+      align-items: flex-start;
+  
+      gap: 15px;
+    }
+  
+  }
