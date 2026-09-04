@@ -1,24 +1,420 @@
 <!doctype html>
+
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vergleich</title>
+  <head>
 
-  <link rel="stylesheet" href="unterseiten.css">
-</head>
+    <meta charset="UTF-8" />
 
-<body>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-  <main>
-    <h1>Porsche vs. Mercedes</h1>
-    <p>Die Weiterleitung funktioniert!</p>
+    <title>Fahrzeugvergleich</title>
 
-    <a class="zurueck-button" href="../index.html">
-      ← Zurück zur Startseite
-    </a>
-  </main>
+    <link rel="stylesheet" href="unterseiten.css" />
 
-</body>
+  </head>
+
+
+  <body>
+
+    <main>
+
+
+      <!-- =========================
+           VERGLEICH
+           ========================= -->
+
+      <section class="vergleich-seite">
+
+
+        <!-- =========================
+             ZURÜCK
+             ========================= -->
+
+        <a
+          class="hero-zurueck vergleich-zurueck"
+          href="../index.html"
+        >
+          ← Zurück zur Startseite
+        </a>
+
+
+
+        <!-- =========================
+             TITEL
+             ========================= -->
+
+        <div class="vergleich-titel">
+
+          <p>Performance Cars</p>
+
+          <h1>Fahrzeugvergleich</h1>
+
+        </div>
+
+
+
+        <!-- =========================
+             FAHRZEUGE
+             ========================= -->
+
+        <div class="vergleich-grid">
+
+
+
+          <!-- =========================
+               MERCEDES-AMG
+               ========================= -->
+
+          <article class="vergleich-auto">
+
+
+            <div class="vergleich-bild-box">
+
+              <img
+                src="Fotos/AMG.jpg"
+                alt="Mercedes-AMG GT 63 PRO"
+              />
+
+
+              <div class="vergleich-bild-overlay">
+
+                <p>Mercedes-AMG</p>
+
+                <h2>GT 63 PRO</h2>
+
+              </div>
+
+            </div>
+
+
+
+            <table class="vergleich-specs">
+
+              <tbody>
+
+
+                <tr>
+
+                  <th>Leistung</th>
+
+                  <td class="wert-schlecht">
+                    612 PS
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Drehmoment</th>
+
+                  <td class="wert-mittel">
+                    850 Nm
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>0–100 km/h</th>
+
+                  <td class="wert-mittel">
+                    3,2 s
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Höchstgeschwindigkeit</th>
+
+                  <td class="wert-schlecht">
+                    317 km/h
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Gewicht</th>
+
+                  <td class="wert-schlecht">
+                    1.950 kg
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Preis</th>
+
+                  <td class="wert-gut">
+                    ab ca. 222.000 €
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+
+          </article>
+
+
+
+          <!-- =========================
+               VS
+               ========================= -->
+
+          <div class="vergleich-vs">
+
+            <span>VS</span>
+
+          </div>
+
+
+
+          <!-- =========================
+               ASTON MARTIN
+               ========================= -->
+
+          <article class="vergleich-auto">
+
+
+            <div class="vergleich-bild-box">
+
+              <img
+                src="Fotos/ASTON.jpg"
+                alt="Aston Martin Vanquish"
+              />
+
+
+              <div class="vergleich-bild-overlay">
+
+                <p>Aston Martin</p>
+
+                <h2>VANQUISH</h2>
+
+              </div>
+
+            </div>
+
+
+
+            <table class="vergleich-specs">
+
+              <tbody>
+
+
+                <tr>
+
+                  <th>Leistung</th>
+
+                  <td class="wert-gut">
+                    835 PS
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Drehmoment</th>
+
+                  <td class="wert-gut">
+                    1.000 Nm
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>0–100 km/h</th>
+
+                  <td class="wert-schlecht">
+                    3,3 s
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Höchstgeschwindigkeit</th>
+
+                  <td class="wert-gut">
+                    345 km/h
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Gewicht</th>
+
+                  <td class="wert-mittel">
+                    1.910 kg
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Preis</th>
+
+                  <td class="wert-schlecht">
+                    ca. 386.000 €
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+
+          </article>
+
+
+
+          <!-- =========================
+               VS
+               ========================= -->
+
+          <div class="vergleich-vs">
+
+            <span>VS</span>
+
+          </div>
+
+
+
+          <!-- =========================
+               PORSCHE
+               ========================= -->
+
+          <article class="vergleich-auto">
+
+
+            <div class="vergleich-bild-box">
+
+              <img
+                src="Fotos/Porsche.jpg"
+                alt="Porsche 911 Turbo S"
+              />
+
+
+              <div class="vergleich-bild-overlay">
+
+                <p>Porsche</p>
+
+                <h2>911 TURBO S</h2>
+
+              </div>
+
+            </div>
+
+
+
+            <table class="vergleich-specs">
+
+              <tbody>
+
+
+                <tr>
+
+                  <th>Leistung</th>
+
+                  <td class="wert-mittel">
+                    650 PS
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Drehmoment</th>
+
+                  <td class="wert-schlecht">
+                    800 Nm
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>0–100 km/h</th>
+
+                  <td class="wert-gut">
+                    2,7 s
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Höchstgeschwindigkeit</th>
+
+                  <td class="wert-mittel">
+                    330 km/h
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Gewicht</th>
+
+                  <td class="wert-gut">
+                    ca. 1.640 kg
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <th>Preis</th>
+
+                  <td class="wert-mittel">
+                    ca. 250.000 €
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </body>
+
 </html>

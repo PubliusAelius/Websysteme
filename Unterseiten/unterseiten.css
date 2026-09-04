@@ -453,3 +453,423 @@
     }
   
   }
+/* =========================================
+   FAHRZEUGVERGLEICH
+   ========================================= */
+
+   .vergleich-seite {
+    position: relative;
+  
+    min-height: 100vh;
+  
+    padding:
+      120px
+      clamp(25px, 2.5vw, 50px)
+      90px;
+  
+    background: #15171b;
+  
+    color: #ffffff;
+  }
+  
+  
+  /* =========================================
+     ZURÜCK-BUTTON
+     ========================================= */
+  
+  .vergleich-zurueck {
+    position: absolute;
+  
+    top: 2rem;
+    left: 2rem;
+  
+    z-index: 10;
+  }
+  
+  
+  /* =========================================
+     TITEL
+     ========================================= */
+  
+  .vergleich-titel {
+    text-align: center;
+  
+    margin-bottom: 55px;
+  }
+  
+  
+  .vergleich-titel p {
+    margin: 0 0 8px;
+  
+    font-size: 13px;
+  
+    text-transform: uppercase;
+  
+    letter-spacing: 0.2em;
+  
+    opacity: 0.55;
+  }
+  
+  
+  .vergleich-titel h1 {
+    margin: 0;
+  
+    font-size: clamp(36px, 4vw, 58px);
+  
+    line-height: 1;
+  }
+  
+  
+  /* =========================================
+     GRID
+     ========================================= */
+  
+  .vergleich-grid {
+    width: 100%;
+    max-width: 1900px;
+  
+    margin: 0 auto;
+  
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1fr)
+      70px
+      minmax(0, 1fr)
+      70px
+      minmax(0, 1fr);
+  
+    align-items: start;
+  
+    gap: 0;
+  }
+  
+  
+  /* =========================================
+     AUTO-KARTE
+     ========================================= */
+  
+  .vergleich-auto {
+    min-width: 0;
+  }
+  
+  
+  /* =========================================
+     BILD
+     ========================================= */
+  
+  .vergleich-bild-box {
+    position: relative;
+  
+    height: clamp(360px, 25vw, 470px);
+  
+    overflow: hidden;
+  
+    border-radius: 18px;
+  
+    background: #202126;
+  }
+  
+  
+  .vergleich-bild-box img {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+  
+    display: block;
+  
+    transition:
+      transform 0.6s ease,
+      filter 0.6s ease;
+  }
+  
+  
+  .vergleich-bild-box:hover img {
+    transform: scale(1.04);
+  }
+  
+  
+  /* Verlauf auf dem Foto */
+  
+  .vergleich-bild-box::after {
+    content: "";
+  
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        transparent 72%
+      );
+  
+    pointer-events: none;
+  }
+  
+  
+  /* =========================================
+     AUTO-NAME AUF BILD
+     ========================================= */
+  
+  .vergleich-bild-overlay {
+    position: absolute;
+  
+    left: 28px;
+    bottom: 25px;
+  
+    z-index: 2;
+  }
+  
+  
+  .vergleich-bild-overlay p {
+    margin: 0 0 5px;
+  
+    font-size: 13px;
+  
+    opacity: 0.7;
+  
+    text-transform: uppercase;
+  
+    letter-spacing: 0.12em;
+  }
+  
+  
+  .vergleich-bild-overlay h2 {
+    margin: 0;
+  
+    font-size: clamp(27px, 2.3vw, 40px);
+  
+    line-height: 1;
+  }
+  
+  
+  /* =========================================
+     VS
+     ========================================= */
+  
+  .vergleich-vs {
+    height: clamp(360px, 25vw, 470px);
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .vergleich-vs span {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    width: 58px;
+    height: 58px;
+  
+    border-radius: 50%;
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  
+    background: rgba(255, 255, 255, 0.04);
+  
+    backdrop-filter: blur(8px);
+  
+    font-size: 16px;
+  
+    font-weight: 700;
+  
+    letter-spacing: 0.1em;
+  }
+  
+  
+  /* =========================================
+     SPECS-TABELLE
+     ========================================= */
+  
+  .vergleich-specs {
+    width: 100%;
+  
+    margin-top: 32px;
+  
+    border-collapse: collapse;
+  }
+  
+  
+  .vergleich-specs tr {
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  
+  .vergleich-specs tr:first-child {
+    border-top:
+      1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  
+  .vergleich-specs th,
+  .vergleich-specs td {
+    padding: 21px 6px;
+  
+    border: none;
+  
+    text-align: left;
+  
+    vertical-align: middle;
+  }
+  
+  
+  .vergleich-specs th {
+    width: 45%;
+  
+    padding-right: 20px;
+  
+    font-size: 15px;
+  
+    font-weight: 500;
+  
+    color: rgba(255, 255, 255, 0.58);
+  }
+  
+  
+  .vergleich-specs td {
+    font-size: 16px;
+  
+    font-weight: 600;
+  
+    color: #ffffff;
+  }
+  
+  
+  /* =========================================
+     BEWERTUNG DER VERGLEICHSWERTE
+     ========================================= */
+  
+  /* Bester Wert */
+  
+  .vergleich-specs td.wert-gut {
+    color: #58d68d;
+  
+    font-weight: 700;
+  }
+  
+  
+  /* Zweitbester Wert */
+  
+  .vergleich-specs td.wert-mittel {
+    color: #f0ad4e;
+  
+    font-weight: 700;
+  }
+  
+  
+  /* Schwächster Wert */
+  
+  .vergleich-specs td.wert-schlecht {
+    color: #ff6957;
+  
+    font-weight: 700;
+  }
+  
+  
+  /* =========================================
+     TABLET
+     ========================================= */
+  
+  @media (max-width: 1200px) {
+  
+    .vergleich-grid {
+      grid-template-columns:
+        minmax(0, 1fr)
+        55px
+        minmax(0, 1fr)
+        55px
+        minmax(0, 1fr);
+    }
+  
+  
+    .vergleich-bild-box,
+    .vergleich-vs {
+      height: 300px;
+    }
+  
+  
+    .vergleich-vs span {
+      width: 46px;
+      height: 46px;
+  
+      font-size: 13px;
+    }
+  
+  
+    .vergleich-specs th,
+    .vergleich-specs td {
+      display: block;
+  
+      width: 100%;
+  
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+  
+    .vergleich-specs th {
+      padding-bottom: 5px;
+    }
+  
+  
+    .vergleich-specs td {
+      padding-top: 0;
+    }
+  
+  }
+  
+  
+  /* =========================================
+     HANDY
+     ========================================= */
+  
+  @media (max-width: 800px) {
+  
+    .vergleich-seite {
+      padding:
+        110px
+        20px
+        60px;
+    }
+  
+  
+    .vergleich-grid {
+      grid-template-columns: 1fr;
+  
+      gap: 25px;
+    }
+  
+  
+    .vergleich-vs {
+      height: auto;
+  
+      padding: 8px 0;
+    }
+  
+  
+    .vergleich-vs span {
+      width: 52px;
+      height: 52px;
+    }
+  
+  
+    .vergleich-bild-box {
+      height: 350px;
+    }
+  
+  
+    .vergleich-specs {
+      margin-bottom: 30px;
+    }
+  
+  }
