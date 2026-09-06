@@ -1,66 +1,222 @@
-#Galerie {
-  padding: 4rem;
-}
+/* ==================================================
+   GALERIE
+   ================================================== */
 
-#Galerie h2 {
-  margin-bottom: 1rem;
-  padding: 4rem;
-}
-.galerie_steuerung {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.galerie-fenster {
-  overflow: hidden;
-}
-.galerie-bilder {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 4.5rem) / 4);
-  gap: 1.5rem;
-}
-.galerie-bilder figure {
-  margin: 0;
-  border: 1px solid #8aa3b8;
-}
-.galerie-bilder img {
-  width: 100%;
-  display: block;
-  margin: 0;
-  height: 14rem;
-  object-fit: cover;
-}
-.impressum {
-  max-width: 50rem;
-  margin: 0 auto;
-  padding: 4rem;
-}
-.impressum h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.impressum p {
-  line-height: 1.6;
-}
-
-.impressum a {
-  display: inline-block;
-  margin-top: 2rem;
-  color: #f2f0eb;
-  text-decoration: none;
-}
-
-.galerie-pfeil {
-  background: none;
-  border: 1px solid #8aa3b8;
-  color: #f2f0eb;
-  padding: 0.5rem 0.8rem;
-}
-.auto-3d {
-  width: 100%;
-  height: 30rem;
-  display: block;
-  border: 1px solid red;
-}
+   #Galerie {
+    padding: 6rem 4rem;
+  }
+  
+  
+  #Galerie h2 {
+    margin: 0 0 4rem;
+  
+    font-family: "Cormorant Garamond", serif;
+  
+    font-size: 2rem;
+  }
+  
+  
+  /* ==================================================
+     GALERIE FENSTER
+     ================================================== */
+  
+  .galerie-fenster {
+    width: 100%;
+  
+    overflow: hidden;
+  
+    scroll-behavior: smooth;
+  }
+  
+  
+  /* ==================================================
+     ALLE GALERIE-SEITEN
+     ================================================== */
+  
+  .galerie-bilder {
+    display: flex;
+  
+    width: 100%;
+  }
+  
+  
+  /* ==================================================
+     EINE GALERIE-SEITE
+     ================================================== */
+  
+  .galerie-seite {
+    position: relative;
+  
+    flex: 0 0 100%;
+  
+    width: 100%;
+  
+    padding: 0 3.5rem;
+  
+    scroll-margin-top: 2rem;
+  }
+  
+  
+  /* ==================================================
+     4 BILDER PRO SEITE
+     ================================================== */
+  
+  .galerie-grid {
+    display: grid;
+  
+    grid-template-columns: repeat(4, 1fr);
+  
+    gap: 1.5rem;
+  }
+  
+  
+  .galerie-grid figure {
+    margin: 0;
+  
+    overflow: hidden;
+  
+    border-radius: 14px;
+  }
+  
+  
+  .galerie-grid img {
+    display: block;
+  
+    width: 100%;
+    height: 14rem;
+  
+    object-fit: cover;
+  
+    border-radius: 14px;
+  
+    transition:
+      transform 0.4s ease,
+      filter 0.4s ease;
+  }
+  
+  
+  /* ==================================================
+     HOVER EFFEKT
+     ================================================== */
+  
+  .galerie-grid figure:hover img {
+    transform: scale(1.04);
+  }
+  
+  
+  /* ==================================================
+     PFEILE
+     ================================================== */
+  
+  .galerie-pfeil {
+    position: absolute;
+  
+    top: 50%;
+  
+    transform: translateY(-50%);
+  
+    z-index: 5;
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    width: 2.5rem;
+    height: 2.5rem;
+  
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  
+    border-radius: 50%;
+  
+    background-color: rgba(21, 23, 27, 0.65);
+  
+    color: white;
+  
+    text-decoration: none;
+  
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  
+  .galerie-pfeil-links {
+    left: 0;
+  }
+  
+  
+  .galerie-pfeil-rechts {
+    right: 0;
+  }
+  
+  
+  .galerie-pfeil:hover {
+    background-color: white;
+  
+    border-color: white;
+  
+    color: #15171b;
+  }
+  
+  
+  /* Pfeil am Anfang / Ende */
+  
+  .galerie-pfeil.deaktiviert {
+    opacity: 0.2;
+  
+    pointer-events: none;
+  }
+  
+  
+  /* ==================================================
+     RESPONSIVE
+     ================================================== */
+  
+  @media (max-width: 1000px) {
+  
+    #Galerie {
+      padding: 5rem 2rem;
+    }
+  
+  
+    .galerie-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+  
+    .galerie-grid img {
+      height: 16rem;
+    }
+  
+  }
+  
+  
+  @media (max-width: 600px) {
+  
+    #Galerie {
+      padding: 4rem 1rem;
+    }
+  
+  
+    #Galerie h2 {
+      margin-bottom: 2rem;
+    }
+  
+  
+    .galerie-seite {
+      padding: 0 2.5rem;
+    }
+  
+  
+    .galerie-grid {
+      grid-template-columns: 1fr;
+    }
+  
+  
+    .galerie-grid img {
+      height: 18rem;
+    }
+  
+  }
