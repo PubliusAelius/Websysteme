@@ -5,6 +5,10 @@ nav ul {
   margin: 0;
   padding: 0;
 }
+html {  /*  Damit wir nicht mehr so springen */
+  scroll-behavior: smooth;
+}
+
 
 nav {
   display: flex;
