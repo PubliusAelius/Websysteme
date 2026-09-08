@@ -1,0 +1,22 @@
+/* ==================================================
+   BARRIEREFREIHEIT
+   Regeln für Tastaturbedienung und reduzierte Bewegung
+   ================================================== */
+   a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #e7c7a0;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

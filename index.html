@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+ <link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="technische_daten.css" />
     <link rel="stylesheet" href="Galerie.css" />
@@ -16,6 +21,7 @@
     <link rel="stylesheet" href="nav_ul.css" />
     <link rel="stylesheet" href="ffeatures.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="barrierefreiheit.css" />
 
     <script
       type="module"
@@ -29,13 +35,13 @@
         <a class="projektname" href="#hero">
           <img class="LOGO" src="assets/logo_sc.svg" alt="SC Logo" />
 
-          <span>Porsche 911 Turbo S<br />vehicle Showcase</span>
+          <span>Porsche 911 Turbo S<br />Vehicle Showcase</span>
         </a>
 
         <ul>
           <li><a href="#hero">Start</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#technische-daten">Technische-daten</a></li>
+          <li><a href="#technische-daten">Technische Daten</a></li>
           <li><a href="#Galerie">Galerie</a></li>
           <li><a href="#Impressum">Impressum</a></li>
         </ul>
@@ -49,9 +55,9 @@
         </video>
 
         <div class="hero-inhalt">
-          <h1>Perfomance, Design und Komfort in einem Auto vereint.</h1>
+        <h1>Performance, Design und Komfort in einem Auto vereint.</h1>
 
-          <a href="#technische-daten">teschniche Daten ansehen</a>
+        <a href="#technische-daten">Technische Daten ansehen</a>
         </div>
       </section>
 
@@ -64,7 +70,7 @@
           <a href="Unterseiten/interior.html" class="feature-link">
             <article class="feature-card interior">
               <div class="feature-content">
-                <h3>Interior</h3>
+          <h3>Innenraum</h3>
                 <p>Zum Erkunden klicken</p>
               </div>
             </article>
@@ -101,7 +107,7 @@
               <img src="assets/icon_leistung.svg" alt="" class="ICON" />
               <div class="DATENTEXT">
                 <dt>Leistung</dt>
-                <dd>650 ps</dd>
+              <dd>650 PS / 478 kW</dd>
               </div>
             </div>
 
@@ -112,25 +118,25 @@
                 class="ICON"
               />
               <div class="DATENTEXT">
-                <dt>0-100</dt>
-                <dd>2.7s</dd>
+              <dt>0–100 km/h</dt>
+              <dd>2,7 s</dd>
                 <button class="video-button" type="button">
-                Video Ansehen
+                Video ansehen
                 </button>
               </div>
             </div>
             <div class="datenpunkt">
               <img src="assets/icon_vmax.svg" alt="" class="ICON" />
               <div class="DATENTEXT">
-                <dt>V MAX</dt>
-                <dd>330</dd>
+              <dt>Höchstgeschwindigkeit</dt>
+              <dd>330 km/h</dd>
               </div>
             </div>
             <div class="datenpunkt">
               <img src="assets/icon_verbrauch_fuel.svg" alt="" class="ICON" />
               <div class="DATENTEXT">
                 <dt>Verbrauch</dt>
-                <dd>Gottlos hoch</dd>
+              <dd>ca. 12,0–12,3 l/100 km</dd>
               </div>
             </div>
           </dl>
@@ -139,7 +145,7 @@
           <figure>
             <img
               src="Galerie section/Trans.png"
-              alt="Transparente Technik ansicht"
+          alt="Transparente Technikansicht"
             />
           </figure>
         </div>
@@ -153,7 +159,8 @@
 
 </video>
 
-<button class="dialog-schliessen" type="button">X</button>
+<button class="dialog-schliessen" type="button" aria-label="video schließen">X</button>
+
 
 </dialog>
 
@@ -417,7 +424,7 @@
     </main>
 
     <footer class="hallos"></footer>
-  </body>
+
   <script>
   const videoButton = document.querySelector(".video-button");
   const dialog = document.querySelector("#beschleunigung-dialog");
@@ -427,9 +434,13 @@
     dialog.showModal();
   });
 
-  schliessenButton.addEventListener("click", () => {
-    dialog.close();
-  });
-</script>
-</html>
+schliessenButton.addEventListener("click", () => {
+  dialog.close();
+});
 
+dialog.addEventListener("close", () => {
+  dialog.querySelector("video").pause();
+});
+</script>
+ </body>
+</html>
