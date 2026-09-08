@@ -1,222 +1,180 @@
-/* ==================================================
+/* 
    GALERIE
-   ================================================== */
+    */
 
-   #Galerie {
-    padding: 6rem 4rem;
-  }
-  
-  
-  #Galerie h2 {
-    margin: 0 0 4rem;
-  
-    font-family: "Cormorant Garamond", serif;
-  
-    font-size: 2rem;
-  }
-  
-  
-  /* ==================================================
-     GALERIE FENSTER
-     ================================================== */
-  
-  .galerie-fenster {
-    width: 100%;
-  
-    overflow: hidden;
-  
-    scroll-behavior: smooth;
-  }
-  
-  
-  /* ==================================================
-     ALLE GALERIE-SEITEN
-     ================================================== */
-  
-  .galerie-bilder {
-    display: flex;
-  
-    width: 100%;
-  }
-  
-  
-  /* ==================================================
-     EINE GALERIE-SEITE
-     ================================================== */
-  
-  .galerie-seite {
-    position: relative;
-  
-    flex: 0 0 100%;
-  
-    width: 100%;
-  
-    padding: 0 3.5rem;
-  
-    scroll-margin-top: 2rem;
-  }
-  
-  
-  /* ==================================================
-     4 BILDER PRO SEITE
-     ================================================== */
-  
-  .galerie-grid {
-    display: grid;
-  
-    grid-template-columns: repeat(4, 1fr);
-  
-    gap: 1.5rem;
-  }
-  
-  
-  .galerie-grid figure {
-    margin: 0;
-  
-    overflow: hidden;
-  
-    border-radius: 14px;
-  }
-  
-  
-  .galerie-grid img {
-    display: block;
-  
-    width: 100%;
-    height: 14rem;
-  
-    object-fit: cover;
-  
-    border-radius: 14px;
-  
-    transition:
-      transform 0.4s ease,
-      filter 0.4s ease;
-  }
-  
-  
-  /* ==================================================
-     HOVER EFFEKT
-     ================================================== */
-  
-  .galerie-grid figure:hover img {
-    transform: scale(1.04);
-  }
-  
-  
-  /* ==================================================
-     PFEILE
-     ================================================== */
-  
-  .galerie-pfeil {
-    position: absolute;
-  
-    top: 50%;
-  
-    transform: translateY(-50%);
-  
-    z-index: 5;
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    width: 2.5rem;
-    height: 2.5rem;
-  
-    border: 1px solid rgba(255, 255, 255, 0.45);
-  
-    border-radius: 50%;
-  
-    background-color: rgba(21, 23, 27, 0.65);
-  
-    color: white;
-  
-    text-decoration: none;
-  
-    transition:
-      background-color 0.3s ease,
-      border-color 0.3s ease,
-      transform 0.3s ease;
-  }
-  
-  
-  .galerie-pfeil-links {
-    left: 0;
-  }
-  
-  
-  .galerie-pfeil-rechts {
-    right: 0;
-  }
-  
-  
-  .galerie-pfeil:hover {
-    background-color: white;
-  
-    border-color: white;
-  
-    color: #15171b;
-  }
-  
-  
-  /* Pfeil am Anfang / Ende */
-  
-  .galerie-pfeil.deaktiviert {
-    opacity: 0.2;
-  
-    pointer-events: none;
-  }
-  
-  
-  /* ==================================================
-     RESPONSIVE
-     ================================================== */
-  
-  @media (max-width: 1000px) {
-  
     #Galerie {
-      padding: 5rem 2rem;
+      padding: 6rem 4rem;
     }
-  
-  
-    .galerie-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-  
-    .galerie-grid img {
-      height: 16rem;
-    }
-  
-  }
-  
-  
-  @media (max-width: 600px) {
-  
-    #Galerie {
-      padding: 4rem 1rem;
-    }
-  
-  
+    
+    
     #Galerie h2 {
-      margin-bottom: 2rem;
+      margin: 0 0 4rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
     }
+    
+    .galerie-fenster {
+      width: 100%;
+      overflow: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    .galerie-bilder {
+      display: flex;
+      width: 100%;
+    }
+    
+    
   
-  
+    
     .galerie-seite {
-      padding: 0 2.5rem;
+      position: relative;
+    
+      flex: 0 0 100%;
+    
+      width: 100%;
+    
+      padding: 0 3.5rem;
+    
+      scroll-margin-top: 2rem;
     }
-  
-  
+    
+    
+    /* ==================================================
+       4 BILDER PRO SEITE
+       ================================================== */
+    
     .galerie-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+    
+      grid-template-columns: repeat(4, 1fr);
+    
+      gap: 1.5rem;
     }
-  
-  
+    
+    
+    .galerie-grid figure {
+      margin: 0;
+    
+      overflow: hidden;
+    
+      border-radius: 14px;
+    }
+    
+    
     .galerie-grid img {
-      height: 18rem;
+      display: block;
+    
+      width: 100%;
+      height: 14rem;
+    
+      object-fit: cover;
+    
+      border-radius: 14px;
+    
+      transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
     }
-  
-  }
+    
+    .galerie-grid figure:hover img {
+      transform: scale(1.04);
+    }
+    
+    
+    /* ==================================================
+       PFEILE
+       ================================================== */
+    
+    .galerie-pfeil {
+      position: absolute;
+    
+      top: 50%;
+    
+      transform: translateY(-50%);
+    
+      z-index: 5;
+    
+      display: flex;
+    
+      align-items: center;
+      justify-content: center;
+    
+      width: 2.5rem;
+      height: 2.5rem;
+    
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    
+      border-radius: 50%;
+    
+      background-color: rgba(21, 23, 27, 0.65);
+    
+      color: white;
+    
+      text-decoration: none;
+    
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+    }
+    
+    
+    .galerie-pfeil-links {
+      left: 0;
+    }
+    
+    
+    .galerie-pfeil-rechts {
+      right: 0;
+    }
+    
+    
+    .galerie-pfeil:hover {
+      background-color: white;
+    
+      border-color: white;
+    
+      color: #15171b;
+    }
+    
+    
+    /* Pfeil am Anfang / Ende */
+    
+    .galerie-pfeil.deaktiviert {
+      opacity: 0.2;
+    
+      pointer-events: none;
+    }
+    
+    
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+    
+    
+    
+    
+       @media (max-width: 600px) {
+
+        #Galerie {
+          padding: 4rem 1rem;
+        }
+      
+        #Galerie h2 {
+          margin-bottom: 2rem;
+        }
+      
+        .galerie-bilder figure {
+          flex: 0 0 100%;
+          padding: 0 2.5rem;
+        }
+      
+        .galerie-bilder img {
+          height: 18rem;
+        }
+      
+        .galerie-pfeil {
+          display: none;
+        }
+      }
