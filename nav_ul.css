@@ -5,10 +5,11 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-html {  /*  Damit wir nicht mehr so springen */
+
+html {
+  /* Damit wir nicht mehr so springen */
   scroll-behavior: smooth;
 }
-
 
 nav {
   display: flex;
@@ -22,9 +23,10 @@ nav {
 }
 
 nav a {
-  color: #f2f0eb;
+  color:#f2f0eb;
   text-decoration: none;
 }
+
 .projektname {
   display: flex;
   font-family: "Cormorant Garamond", serif;
@@ -33,18 +35,31 @@ nav a {
   align-items: center;
 }
 
-@media(max-width:700px){
-nav{ 
-flex-direction:column;
-align-items: flex-start;
-gap: 1rem;
-}
-nav ul{
-flex-wrap: wrap;
-width: 100%;
-gap: 0.75rem 1.25rem;
-}
-header {
-  padding: 1rem 1.5rem;
-}
-}
+
+/* =========================================
+   HANDY
+   Desktop darüber bleibt unverändert
+   ========================================= */
+
+   @media(max-width:700px){
+    nav{ 
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 1rem;
+    }
+    nav ul{
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 0.65rem 1.2rem;
+    font-size: 0.7rem;
+    }
+    .LOGO{
+    width:4rem;
+    height:4rem;
+    
+    }
+    
+    header {
+      padding: 0.65rem 1.2rem;
+    }
+  }
