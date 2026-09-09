@@ -24,10 +24,6 @@
     <link rel="stylesheet" href="../footer.css" />
     <link rel="stylesheet" href="../barrierefreiheit.css" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
   </head>
 
   <body>
@@ -83,7 +79,7 @@
           playsinline
         >
           <source
-            src="../Galerie section/Drive.mov"
+            src="../Galerie%20section/Drive.mov"
             type="video/mp4"
           />
         </video>
@@ -102,6 +98,8 @@
       <!-- FEATURES -->
 
       <section id="features">
+
+        <h2 class="visually-hidden">Vehicle sections</h2>
 
         <div class="feature-grid">
 
@@ -171,7 +169,7 @@
           <h2>Technical Data</h2>
 
 
-          <dl class="datengrid">
+          <div class="datengrid">
 
 
             <div class="datenpunkt">
@@ -184,9 +182,27 @@
 
               <div class="DATENTEXT">
 
-                <dt>Power</dt>
+                <dl>
+                  <dt>Power</dt>
+                  <dd>650 PS / 478 kW</dd>
+                </dl>
 
-                <dd>650 PS / 478 kW</dd>
+                <!-- NEW: MOTOR SOUND -->
+                <audio id="motorsound" preload="metadata">
+                  <source
+                    src="../Galerie%20section/Coldstart.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+
+                <button
+                  class="button2"
+                  type="button"
+                  aria-controls="motorsound"
+                >
+                  Start engine
+                </button>
+                <!-- END: MOTOR SOUND -->
 
               </div>
 
@@ -203,9 +219,10 @@
 
               <div class="DATENTEXT">
 
-                <dt>0–100 km/h</dt>
-
-                <dd>2.7 s</dd>
+                <dl>
+                  <dt>0–100 km/h</dt>
+                  <dd>2.7 s</dd>
+                </dl>
 
                 <button
                   class="video-button"
@@ -229,9 +246,10 @@
 
               <div class="DATENTEXT">
 
-                <dt>Top Speed</dt>
-
-                <dd>330 km/h</dd>
+                <dl>
+                  <dt>Top Speed</dt>
+                  <dd>330 km/h</dd>
+                </dl>
 
               </div>
 
@@ -248,16 +266,17 @@
 
               <div class="DATENTEXT">
 
-                <dt>Fuel Consumption</dt>
-
-                <dd>approx. 12.0–12.3 l/100 km</dd>
+                <dl>
+                  <dt>Fuel Consumption</dt>
+                  <dd>approx. 12.0–12.3 l/100 km</dd>
+                </dl>
 
               </div>
 
             </div>
 
 
-          </dl>
+          </div>
 
         </div>
 
@@ -267,7 +286,7 @@
           <figure>
 
             <img
-              src="../Galerie section/Trans.png"
+              src="../Galerie%20section/Trans.png"
               alt="Transparent technical view"
             />
 
@@ -285,7 +304,7 @@
         <video controls preload="metadata">
 
           <source
-            src="../Galerie section/0_100.mp4"
+            src="../Galerie%20section/0_100.mp4"
             type="video/mp4"
           />
 
@@ -335,7 +354,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/01.jfif"
+                    src="../Galerie%20section/01.jfif"
                     alt="Front view of Porsche 911 Turbo S"
                   />
 
@@ -345,7 +364,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/02.jfif"
+                    src="../Galerie%20section/02.jfif"
                     alt="Porsche 911 Turbo S viewed from the front"
                   />
 
@@ -355,7 +374,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/03.jfif"
+                    src="../Galerie%20section/03.jfif"
                     alt="Side view of Porsche 911 Turbo S"
                   />
 
@@ -365,7 +384,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/04.jfif"
+                    src="../Galerie%20section/04.jfif"
                     alt="Rear three-quarter view of Porsche 911 Turbo S"
                   />
 
@@ -406,7 +425,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/05.jfif"
+                    src="../Galerie%20section/05.jfif"
                     alt="Rear view of Porsche 911 Turbo S"
                   />
 
@@ -416,7 +435,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/06.jfif"
+                    src="../Galerie%20section/06.jfif"
                     alt="Side view of Porsche 911 Turbo S"
                   />
 
@@ -426,7 +445,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/07.jfif"
+                    src="../Galerie%20section/07.jfif"
                     alt="Porsche 911 Cabriolet"
                   />
 
@@ -436,7 +455,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/CaprioOben.jpg"
+                    src="../Galerie%20section/CaprioOben.jpg"
                     alt="Porsche 911 Cabriolet viewed from above"
                   />
 
@@ -477,7 +496,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/CabrioAuspuff.jpg"
+                    src="../Galerie%20section/CabrioAuspuff.jpg"
                     alt="Porsche 911 exhaust detail"
                   />
 
@@ -487,7 +506,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/CabrioVorne.jpg"
+                    src="../Galerie%20section/CabrioVorne.jpg"
                     alt="Front view of Porsche 911 Cabriolet"
                   />
 
@@ -497,7 +516,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/neu1.jpg"
+                    src="../Galerie%20section/neu1.jpg"
                     alt="Porsche 911 detail"
                   />
 
@@ -507,7 +526,7 @@
                 <figure>
 
                   <img
-                    src="../Galerie section/AuspuffHyper.jpg"
+                    src="../Galerie%20section/AuspuffHyper.jpg"
                     alt="Porsche 911 exhaust detail"
                   />
 
@@ -637,6 +656,17 @@
       dialog.addEventListener("close", () => {
         dialog.querySelector("video").pause();
       });
+
+
+      // NEW: MOTOR SOUND
+      const motorsound = document.querySelector("#motorsound");
+      const motorsoundButton = document.querySelector(".button2");
+
+      motorsoundButton.addEventListener("click", () => {
+        motorsound.currentTime = 0;
+        motorsound.play();
+      });
+      // END: MOTOR SOUND
 
     </script>
 

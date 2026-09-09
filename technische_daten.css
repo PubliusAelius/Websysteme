@@ -56,6 +56,10 @@ background: linear-gradient(
   
 }
 
+.DATENTEXT dl {
+  margin: 0;
+}
+
 .datenpunkt dd {
   margin: 0;
   font-weight: 600;

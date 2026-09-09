@@ -41,6 +41,13 @@
       href="../barrierefreiheit.css"
     />
 
+    <!-- NEW: 3D MODEL – loads the required model-viewer component -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <!-- END: 3D MODEL -->
+
   </head>
 
 
@@ -85,6 +92,11 @@
 
       <section class="specs-bereich">
 
+        <h2 class="visually-hidden">Vehicle data overview</h2>
+
+
+        <!-- NEW: 3D MODEL – table on the left, Porsche model on the right -->
+        <div class="specs-layout">
 
         <table class="specs-tabelle">
 
@@ -208,6 +220,22 @@
 
 
         </table>
+
+          <figure class="specs-modell">
+            <model-viewer
+              src="../assets/models/porsche3d.glb"
+              alt="Rotatable 3D model of a Porsche 911"
+              camera-controls
+              auto-rotate
+              shadow-intensity="1"
+              environment-image="neutral"
+              touch-action="pan-y"
+            ></model-viewer>
+
+            <figcaption>Drag to rotate</figcaption>
+          </figure>
+        </div>
+        <!-- END: 3D MODEL -->
 
 
       </section>
