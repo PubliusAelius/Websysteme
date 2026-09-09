@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Porsche 911 Turbo S</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS liegt eine Ebene über ENG -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../technische_daten.css" />
+    <link rel="stylesheet" href="../Galerie.css" />
+    <link rel="stylesheet" href="../hero.css" />
+    <link rel="stylesheet" href="../nav_ul.css" />
+    <link rel="stylesheet" href="../ffeatures.css" />
+    <link rel="stylesheet" href="../footer.css" />
+    <link rel="stylesheet" href="../barrierefreiheit.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+
+        <a class="projektname" href="#hero">
+          <img
+            class="LOGO"
+            src="../assets/logo_sc.svg"
+            alt="SC Logo"
+          />
+
+          <span>
+            Porsche 911 Turbo S<br />
+            Vehicle Showcase
+          </span>
+        </a>
+        <div class="rechts"><!-- Reiner design Contaner damit alles einheitlich ist-->
+        <div class="language-switch">
+            <span class="language-label">DE</span>
+          
+            <a class="language-toggle english-active" href="../index.html" aria-label="Auf Deutsch wechseln">
+              <span class="language-knob"></span>
+            </a>
+          
+            <span class="language-label active">EN</span>
+          </div>
+        <ul>
+          <li><a href="#features">Discover</a></li>
+          <li><a href="#technische-daten">Technical Data</a></li>
+          <li><a href="#Galerie">Gallery</a></li>
+          <li><a href="#Impressum">Legal Notice</a></li>
+        </ul>
+    </div>
+
+      </nav>
+    </header>
+
+
+    <main>
+
+      <!-- HERO -->
+
+      <section id="hero">
+
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source
+            src="../Galerie section/Drive.mov"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-inhalt">
+
+          <h1>
+            Performance, design and comfort combined in one car.
+          </h1>
+
+        </div>
+
+      </section>
+
+
+      <!-- FEATURES -->
+
+      <section id="features">
+
+        <div class="feature-grid">
+
+
+          <a href="interior.html" class="feature-link">
+
+            <article class="feature-card interior">
+
+              <div class="feature-content">
+
+                <h3>Interior</h3>
+
+                <p>Click to explore</p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <a href="vergleich.html" class="feature-link">
+
+            <article class="feature-card VS">
+
+              <div class="feature-content">
+
+                <h3>Porsche vs ...</h3>
+
+                <p>Click to explore</p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <a href="specs.html" class="feature-link">
+
+            <article class="feature-card specs">
+
+              <div class="feature-content">
+
+                <h3>Specs</h3>
+
+                <p>Click to explore</p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- TECHNICAL DATA -->
+
+      <section id="technische-daten">
+
+        <div class="technische-inhalt">
+
+          <h2>Technical Data</h2>
+
+
+          <dl class="datengrid">
+
+
+            <div class="datenpunkt">
+
+              <img
+                src="../assets/icon_leistung.svg"
+                alt=""
+                class="ICON"
+              />
+
+              <div class="DATENTEXT">
+
+                <dt>Power</dt>
+
+                <dd>650 PS / 478 kW</dd>
+
+              </div>
+
+            </div>
+
+
+            <div class="datenpunkt">
+
+              <img
+                src="../assets/icon_performance_speedometer.svg"
+                alt=""
+                class="ICON"
+              />
+
+              <div class="DATENTEXT">
+
+                <dt>0–100 km/h</dt>
+
+                <dd>2.7 s</dd>
+
+                <button
+                  class="video-button"
+                  type="button"
+                >
+                  Watch video
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div class="datenpunkt">
+
+              <img
+                src="../assets/icon_vmax.svg"
+                alt=""
+                class="ICON"
+              />
+
+              <div class="DATENTEXT">
+
+                <dt>Top Speed</dt>
+
+                <dd>330 km/h</dd>
+
+              </div>
+
+            </div>
+
+
+            <div class="datenpunkt">
+
+              <img
+                src="../assets/icon_verbrauch_fuel.svg"
+                alt=""
+                class="ICON"
+              />
+
+              <div class="DATENTEXT">
+
+                <dt>Fuel Consumption</dt>
+
+                <dd>approx. 12.0–12.3 l/100 km</dd>
+
+              </div>
+
+            </div>
+
+
+          </dl>
+
+        </div>
+
+
+        <div class="Transparent">
+
+          <figure>
+
+            <img
+              src="../Galerie section/Trans.png"
+              alt="Transparent technical view"
+            />
+
+          </figure>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACCELERATION VIDEO -->
+
+      <dialog id="beschleunigung-dialog">
+
+        <video controls preload="metadata">
+
+          <source
+            src="../Galerie section/0_100.mp4"
+            type="video/mp4"
+          />
+
+        </video>
+
+        <button
+          class="dialog-schliessen"
+          type="button"
+          aria-label="Close video"
+        >
+          X
+        </button>
+
+      </dialog>
+
+
+      <!-- GALLERY -->
+
+      <section id="Galerie">
+
+        <h2>GALLERY</h2>
+
+
+        <div class="galerie-fenster">
+
+          <div class="galerie-bilder">
+
+
+            <!-- GALLERY PAGE 1 -->
+
+            <div
+              class="galerie-seite"
+              id="galerie-1"
+            >
+
+              <a
+                class="galerie-pfeil galerie-pfeil-links deaktiviert"
+                href="#galerie-1"
+                aria-label="Previous images"
+              >
+                ←
+              </a>
+
+
+              <div class="galerie-grid">
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/01.jfif"
+                    alt="Front view of Porsche 911 Turbo S"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/02.jfif"
+                    alt="Porsche 911 Turbo S viewed from the front"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/03.jfif"
+                    alt="Side view of Porsche 911 Turbo S"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/04.jfif"
+                    alt="Rear three-quarter view of Porsche 911 Turbo S"
+                  />
+
+                </figure>
+
+              </div>
+
+
+              <a
+                class="galerie-pfeil galerie-pfeil-rechts"
+                href="#galerie-2"
+                aria-label="Next images"
+              >
+                →
+              </a>
+
+            </div>
+
+
+            <!-- GALLERY PAGE 2 -->
+
+            <div
+              class="galerie-seite"
+              id="galerie-2"
+            >
+
+              <a
+                class="galerie-pfeil galerie-pfeil-links"
+                href="#galerie-1"
+                aria-label="Previous images"
+              >
+                ←
+              </a>
+
+
+              <div class="galerie-grid">
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/05.jfif"
+                    alt="Rear view of Porsche 911 Turbo S"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/06.jfif"
+                    alt="Side view of Porsche 911 Turbo S"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/07.jfif"
+                    alt="Porsche 911 Cabriolet"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/CaprioOben.jpg"
+                    alt="Porsche 911 Cabriolet viewed from above"
+                  />
+
+                </figure>
+
+              </div>
+
+
+              <a
+                class="galerie-pfeil galerie-pfeil-rechts"
+                href="#galerie-3"
+                aria-label="Next images"
+              >
+                →
+              </a>
+
+            </div>
+
+
+            <!-- GALLERY PAGE 3 -->
+
+            <div
+              class="galerie-seite"
+              id="galerie-3"
+            >
+
+              <a
+                class="galerie-pfeil galerie-pfeil-links"
+                href="#galerie-2"
+                aria-label="Previous images"
+              >
+                ←
+              </a>
+
+
+              <div class="galerie-grid">
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/CabrioAuspuff.jpg"
+                    alt="Porsche 911 exhaust detail"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/CabrioVorne.jpg"
+                    alt="Front view of Porsche 911 Cabriolet"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/neu1.jpg"
+                    alt="Porsche 911 detail"
+                  />
+
+                </figure>
+
+
+                <figure>
+
+                  <img
+                    src="../Galerie section/AuspuffHyper.jpg"
+                    alt="Porsche 911 exhaust detail"
+                  />
+
+                </figure>
+
+              </div>
+
+
+              <a
+                class="galerie-pfeil galerie-pfeil-rechts deaktiviert"
+                href="#galerie-3"
+                aria-label="No more images"
+              >
+                →
+              </a>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- LEGAL NOTICE -->
+
+      <section
+        id="Impressum"
+        class="footer-impressum"
+      >
+
+        <div class="footer-impressum-grid">
+
+
+          <div class="footer-impressum-box">
+
+            <h2>Legal Notice</h2>
+
+            <p>
+              Student project<br />
+              for the Web Systems module.
+            </p>
+
+          </div>
+
+
+          <div class="footer-impressum-box">
+
+            <h2>Project Team</h2>
+
+            <p>
+              Adrian Bräuer<br />
+              Erik Bockner
+            </p>
+
+          </div>
+
+
+          <div class="footer-impressum-box">
+
+            <h2>Contact</h2>
+
+            <p>
+              University / Degree Programme<br />
+              E-mail: ...
+            </p>
+
+          </div>
+
+
+          <div class="footer-impressum-box">
+
+            <h2>Disclaimer</h2>
+
+            <p>
+              Student project.<br />
+              No affiliation with Dr. Ing. h.c. F. Porsche Aktiengesellschaft.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="footer-impressum-unten">
+
+          <p>
+            © 2026 Adrian Bräuer & Erik Bockner
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+    <footer class="hallos"></footer>
+
+
+    <script>
+
+      const videoButton =
+        document.querySelector(".video-button");
+
+      const dialog =
+        document.querySelector("#beschleunigung-dialog");
+
+      const schliessenButton =
+        document.querySelector(".dialog-schliessen");
+
+
+      videoButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+
+      schliessenButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+
+      dialog.addEventListener("close", () => {
+        dialog.querySelector("video").pause();
+      });
+
+    </script>
+
+  </body>
+
+</html>
