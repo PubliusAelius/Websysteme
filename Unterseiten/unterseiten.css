@@ -1,922 +1,554 @@
 /*Unterseiten.css soll alle CSS sachen für die Unterseitenen enthalten*/
 
-   * {
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #15171b;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* Specs */
+
+.hero-zurueck {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 5;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  background-color: rgba(21, 23, 27, 0.4);
+  color: white;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-zurueck:hover {
+  background-color: rgba(21, 23, 27, 0.85);
+  border-color: white;
+  transform: translateX(-3px);
+}
+
+.specs-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.specs-hero-bild {
+  position: absolute;
+  inset: 0; /* Kurzform für top, right, bottom und left = 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.specs-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(21, 23, 27, 0.5) 45%,
+    #15171b 100%
+  );
+  z-index: 1;
+}
+
+.specs-hero-inhalt {
+  position: absolute;
+  left: 8%;
+  bottom: 12%;
+  z-index: 2;
+}
+
+.specs-hero-inhalt p {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.12rem;
+  opacity: 0.8;
+}
+
+.specs-hero-inhalt h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 7rem); /* Schriftgröße passt sich an, bleibt aber zwischen 3rem und 7rem */
+  line-height: 0.95;
+}
+
+.specs-bereich {
+  width: min(90%, 1400px);
+  margin: 0 auto;
+  padding: 3rem 0 6rem;
+}
+
+.specs-tabelle {
+  width: 100%;
+ border-collapse: collapse; /* Laut YT: Damit die Linien der Tabellenzeilen durchgehend dargestellt werden */
+}
+
+.specs-tabelle tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.specs-tabelle th,
+.specs-tabelle td {
+  padding: 1.3rem 0;
+  text-align: left;
+}
+
+.specs-tabelle th {
+  width: 40%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.specs-tabelle td {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/*Neu 3D Modell + ist mit Unterstützung ;)*/
+
+.specs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(22rem, 0.9fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.specs-layout > * {
+  min-width: 0;
+}
+
+.specs-modell {
+  position: sticky;
+  top: 2rem;
+  margin: 0;
+  padding: 1rem;
+  overflow: hidden;
+  background-color: #1c1f24;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+}
+
+.specs-modell model-viewer {
+  display: block;
+  width: 100%;
+  height: 38rem;
+}
+
+.specs-modell figcaption {
+  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .specs-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
-  
-  
-  
-  
-  body {
-    margin: 0;
-  
-    min-height: 100vh;
-  
-    background-color: #15171b;
-  
-    color: white;
-  
-    font-family: "Inter", sans-serif;
-  }
-  
-  
-  main {
-    width: 100%;
-  }
-  
-  
-  /* Specs */
-  
-  .hero-zurueck {
-    position: absolute;
-  
-    top: 2rem;
-    left: 2rem;
-    z-index: 5;
-  
-    /*display: inline-block; ist hier Unnötig oder ?*/
-  
-    padding: 0.8rem 1.2rem;
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 8px;
-    background-color: rgba(21, 23, 27, 0.4);
-    color: white;
-    text-decoration: none;
-    backdrop-filter: blur(6px);     /*Sieht man nicht aber für die einheitlichkeit*/
-    
-    transition:
-      background-color 0.3s ease,
-      transform 0.3s ease,
-      border-color 0.3s ease;
-  }
-  
-  
-  .hero-zurueck:hover {
-    background-color: rgba(21, 23, 27, 0.85);
-    border-color: white;
-    transform: translateX(-3px);
-  }
-  
-  
-  /* */
-  
-  .specs-hero {
-    position: relative;
-  
-    width: 100%;
-  
-    height: 70vh;
-  
-    overflow: hidden;
-  }
-  
-  
-  .specs-hero-bild {
-    position: absolute;
-  
-    inset: 0;
-  
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-    object-position: center;
-  
-    z-index: 0;
-  }
-  
-  
-  .specs-hero::after {
-    content: "";
-  
-    position: absolute;
-  
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    height: 30vh;
-  
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(21, 23, 27, 0.5) 45%,
-      #15171b 100%
-    );
-  
-    z-index: 1;
-  }
-  
-  
-  .specs-hero-inhalt {
-    position: absolute;
-  
-    left: 8%;
-    bottom: 12%;
-  
-    text-align: left;
-  
-    z-index: 2;
-  }
-  
-  
-  .specs-hero-inhalt p {
-    margin: 0 0 0.5rem;
-  
-    font-size: 1.1rem;
-  
-    letter-spacing: 0.12rem;
-  
-    opacity: 0.8;
-  }
-  
-  
-  .specs-hero-inhalt h1 {
-    margin: 0;
-  
-    font-size: clamp(3rem, 7vw, 7rem);
-  
-    line-height: 0.95;
-  }
-  
-  
-  /* ==================================================
-     SPECS BEREICH
-     ================================================== */
-  
-  .specs-bereich {
-    width: min(90%, 1400px);
-  
-    margin: 0 auto;
-  
-    padding: 3rem 0 6rem;
-  }
-  
-  
+
   .specs-tabelle {
-    width: 100%;
-  
-    border-collapse: collapse;
+    table-layout: fixed;
   }
-  
-  
-  .specs-tabelle tr {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  }
-  
-  
+
   .specs-tabelle th,
   .specs-tabelle td {
-    padding: 1.3rem 0;
-  
-    text-align: left;
-  }
-  
-  
-  .specs-tabelle th {
-    width: 40%;
-  
-    font-size: 1rem;
-  
-    font-weight: 500;
-  
-    color: rgba(255, 255, 255, 0.65);
-  }
-  
-  
-  .specs-tabelle td {
-    font-size: 1.05rem;
-  
-    font-weight: 600;
-  }
-
-
-  /* ==================================================
-     NEU: 3D-MODELL AUF DER SPECS-SEITE
-     ================================================== */
-
-  .specs-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(22rem, 0.9fr);
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .specs-layout > * {
-    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .specs-modell {
-    position: sticky;
-    top: 2rem;
-    margin: 0;
-    padding: 1rem;
-    overflow: hidden;
-    background-color: #1c1f24;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 1rem;
+    position: static;
   }
 
   .specs-modell model-viewer {
-    display: block;
-    width: 100%;
-    height: 38rem;
+    height: min(70vh, 32rem);
   }
+}
 
-  .specs-modell figcaption {
-    margin-top: 0.75rem;
-    color: rgba(255, 255, 255, 0.65);
+/*Ab hier Innenraum*/
+
+.interior-hero {
+  position: relative;
+  width: 100%;
+  height: 58vh;
+  overflow: hidden;
+}
+
+.interior-hero-bild {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.interior-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(21, 23, 27, 0.5) 45%,
+    #15171b 100%
+  );
+  z-index: 1;
+}
+
+.interior-hero-inhalt {
+  position: absolute;
+  left: 8%;
+  bottom: 10%;
+  z-index: 2;
+}
+
+.interior-hero-inhalt p {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.12rem;
+  opacity: 0.8;
+}
+
+.interior-hero-inhalt h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+}
+
+.interior-bereich {
+  padding: 1.5rem 0 4rem;
+  overflow: hidden;
+}
+
+.interior-carousel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 20vw;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;/* ist für das einrasten*/
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.interior-slide {
+  flex: 0 0 60vw;/* soll nicht wachsen, nicht schrumpfen, Breite soll = 60vw */
+  height: 55vh;
+  scroll-snap-align: center; /* sagt wo eingeratet werden soll*/
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.94);
+  transition: transform 0.35s ease;
+}
+
+.interior-slide:hover {
+  transform: scale(1);
+}
+
+.interior-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .hero-zurueck {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.7rem 1rem;
     font-size: 0.9rem;
-    text-align: center;
   }
 
-  @media (max-width: 900px) {
-    .specs-layout {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .specs-tabelle {
-      table-layout: fixed;
-    }
-
-    .specs-tabelle th,
-    .specs-tabelle td {
-      overflow-wrap: anywhere;
-    }
-
-    .specs-modell {
-      position: static;
-    }
-
-    .specs-modell model-viewer {
-      height: min(70vh, 32rem);
-    }
-  }
-
-  /* ENDE: 3D-MODELL AUF DER SPECS-SEITE */
-  
-  
-  /* ==================================================
-     INTERIOR HERO
-     ================================================== */
-  
-  .interior-hero {
-    position: relative;
-  
-    width: 100%;
-  
-    height: 58vh;
-  
-    overflow: hidden;
-  }
-  
-  
-  .interior-hero-bild {
-    position: absolute;
-  
-    inset: 0;
-  
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-    object-position: center;
-  
-    z-index: 0;
-  }
-  
-  
-  .interior-hero::after {
-    content: "";
-  
-    position: absolute;
-  
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    height: 22vh;
-  
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(21, 23, 27, 0.5) 45%,
-      #15171b 100%
-    );
-  
-    z-index: 1;
-  }
-  
-  
-  .interior-hero-inhalt {
-    position: absolute;
-  
-    left: 8%;
-    bottom: 10%;
-  
-    text-align: left;
-  
-    z-index: 2;
-  }
-  
-  
-  .interior-hero-inhalt p {
-    margin: 0 0 0.5rem;
-  
-    font-size: 1.1rem;
-  
-    letter-spacing: 0.12rem;
-  
-    opacity: 0.8;
-  }
-  
-  
-  .interior-hero-inhalt h1 {
-    margin: 0;
-  
-    font-size: clamp(3rem, 7vw, 6rem);
-  
-    line-height: 0.95;
-  }
-  
-  
-  /* ==================================================
-     INTERIOR BEREICH
-     ================================================== */
-  
-  .interior-bereich {
-    width: 100%;
-  
-    padding: 1.5rem 0 4rem;
-  
-    overflow: hidden;
-  }
-  
-  
-  /* ==================================================
-     INTERIOR CAROUSEL
-     ================================================== */
-  
-  .interior-carousel {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 2rem;
-  
-    width: 100%;
-  
-    padding: 2rem 20vw;
-  
-    overflow-x: auto;
-  
-    scroll-snap-type: x mandatory;
-  
-    scroll-behavior: smooth;
-  
-    scrollbar-width: thin;
-  }
-  
-  
-  /* ==================================================
-     EINZELNE INTERIOR BILDER
-     ================================================== */
-  
-  .interior-slide {
-    flex: 0 0 60vw;
-  
+  .specs-hero {
     height: 55vh;
-  
-    scroll-snap-align: center;
-  
-    border-radius: 12px;
-  
-    overflow: hidden;
-  
-    opacity: 0.65;
-  
-    transform: scale(0.94);
-  
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s ease;
   }
-  
-  
-  .interior-slide:hover {
-    opacity: 1;
-  
-    transform: scale(1);
-  }
-  
-  
-  .interior-slide img {
-    width: 100%;
-    height: 100%;
-  
-    display: block;
-  
-    object-fit: cover;
-  }
-  
-  
-  /* ==================================================
-     RESPONSIVE
-     ================================================== */
-  
-  @media (max-width: 700px) {
-  
-    .hero-zurueck {
-      top: 1rem;
-      left: 1rem;
-  
-      padding: 0.7rem 1rem;
-  
-      font-size: 0.9rem;
-    }
-  
-  
-    .specs-hero {
-      height: 55vh;
-    }
-  
-  
-    .specs-hero::after {
-      height: 22vh;
-    }
-  
-  
-    .specs-hero-inhalt {
-      left: 5%;
-      bottom: 8%;
-    }
-  
-  
-    .specs-bereich {
-      width: 90%;
-  
-      padding-top: 2rem;
-    }
-  
-  
-    .specs-tabelle th,
-    .specs-tabelle td {
-      padding: 1rem 0.5rem;
-    }
-  
-  
-    .specs-tabelle th {
-      width: 42%;
-    }
-  
-  
-    .interior-hero {
-      height: 50vh;
-    }
-  
-  
-    .interior-hero::after {
-      height: 18vh;
-    }
-  
-  
-    .interior-hero-inhalt {
-      left: 5%;
-      bottom: 8%;
-    }
-  
-  
-    .interior-carousel {
-      gap: 1rem;
-  
-      padding: 2rem 10vw;
-    }
-  
-  
-    .interior-slide {
-      flex-basis: 80vw;
-  
-      height: 42vh;
-    }
-  
-  }
-/* =========================================
-   FAHRZEUGVERGLEICH
-   ========================================= */
 
-   .vergleich-seite {
-    position: relative;
-  
-    min-height: 100vh;
-  
+  .specs-hero::after {
+    height: 22vh;
+  }
+
+  .specs-hero-inhalt {
+    left: 5%;
+    bottom: 8%;
+  }
+
+  .specs-bereich {
+    width: 90%;
+    padding-top: 2rem;
+  }
+
+  .specs-tabelle th,
+  .specs-tabelle td {
+    padding: 1rem 0.5rem;
+  }
+
+  .specs-tabelle th {
+    width: 42%;
+  }
+
+  .interior-hero {
+    height: 50vh;
+  }
+
+  .interior-hero::after {
+    height: 18vh;
+  }
+
+  .interior-hero-inhalt {
+    left: 5%;
+    bottom: 8%;
+  }
+
+  .interior-carousel {
+    gap: 1rem;
+    padding: 2rem 10vw;
+  }
+
+  .interior-slide {
+    flex-basis: 80vw;
+    height: 42vh;
+  }
+}
+/*Vergleich ab hier*/
+
+.vergleich-seite {
+  position: relative;
+  min-height: 100vh;
+  padding:120px clamp(25px, 2.5vw, 50px) 90px;
+}
+
+.vergleich-zurueck {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.vergleich-titel {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.vergleich-titel p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.55;
+}
+
+.vergleich-titel h1 {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1;
+}
+
+.vergleich-grid {
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    70px
+    minmax(0, 1fr)
+    70px
+    minmax(0, 1fr);
+  align-items: start;
+}
+
+.vergleich-auto {
+  min-width: 0;
+}
+
+.vergleich-bild-box {
+  position: relative;
+  height: clamp(360px, 25vw, 470px);
+  overflow: hidden;
+  border-radius: 18px;
+  background: #202126;
+}
+
+.vergleich-bild-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.vergleich-bild-box:hover img {
+  transform: scale(1.04);
+}
+
+/* Verlauf auf dem Foto */
+
+.vergleich-bild-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.25) 45%,
+      transparent 72%
+    );
+  pointer-events: none;
+}
+
+.vergleich-bild-overlay {
+  position: absolute;
+  left: 28px;
+  bottom: 25px;
+  z-index: 2;
+}
+
+.vergleich-bild-overlay p {
+  margin: 0 0 5px;
+  font-size: 13px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.vergleich-bild-overlay h2 {
+  margin: 0;
+  font-size: clamp(27px, 2.3vw, 40px);
+  line-height: 1;
+}
+
+.vergleich-vs {
+  height: clamp(360px, 25vw, 470px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vergleich-vs span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.vergleich-specs {
+  width: 100%;
+  margin-top: 32px;
+  border-collapse: collapse;
+}
+
+.vergleich-specs tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vergleich-specs tr:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vergleich-specs th,
+.vergleich-specs td {
+  padding: 21px 6px;
+  border: none;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.vergleich-specs th {
+  width: 45%;
+  padding-right: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.vergleich-specs td {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Bester Wert */
+
+.vergleich-specs td.wert-gut {
+  color: #58d68d;
+  font-weight: 700;
+}
+
+/* Zweitbester Wert */
+
+.vergleich-specs td.wert-mittel {
+  color: #f0ad4e;
+  font-weight: 700;
+}
+
+/* Schwächster Wert */
+
+.vergleich-specs td.wert-schlecht {
+  color: #ff6957;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .vergleich-seite {
     padding:
-      120px
-      clamp(25px, 2.5vw, 50px)
-      90px;
-  
-    background: #15171b;
-  
-    color: #ffffff;
+      110px
+      20px
+      60px;
   }
-  
-  
-  /* =========================================
-     ZURÜCK-BUTTON
-     ========================================= */
-  
-  .vergleich-zurueck {
-    position: absolute;
-  
-    top: 2rem;
-    left: 2rem;
-  
-    z-index: 10;
-  }
-  
-  
-  /* =========================================
-     TITEL
-     ========================================= */
-  
-  .vergleich-titel {
-    text-align: center;
-  
-    margin-bottom: 55px;
-  }
-  
-  
-  .vergleich-titel p {
-    margin: 0 0 8px;
-  
-    font-size: 13px;
-  
-    text-transform: uppercase;
-  
-    letter-spacing: 0.2em;
-  
-    opacity: 0.55;
-  }
-  
-  
-  .vergleich-titel h1 {
-    margin: 0;
-  
-    font-size: clamp(36px, 4vw, 58px);
-  
-    line-height: 1;
-  }
-  
-  
-  /* =========================================
-     GRID
-     ========================================= */
-  
+
   .vergleich-grid {
-    width: 100%;
-    max-width: 1900px;
-  
-    margin: 0 auto;
-  
-    display: grid;
-  
-    grid-template-columns:
-      minmax(0, 1fr)
-      70px
-      minmax(0, 1fr)
-      70px
-      minmax(0, 1fr);
-  
-    align-items: start;
-  
-    gap: 0;
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
-  
-  
-  /* =========================================
-     AUTO-KARTE
-     ========================================= */
-  
-  .vergleich-auto {
-    min-width: 0;
-  }
-  
-  
-  /* =========================================
-     BILD
-     ========================================= */
-  
-  .vergleich-bild-box {
-    position: relative;
-  
-    height: clamp(360px, 25vw, 470px);
-  
-    overflow: hidden;
-  
-    border-radius: 18px;
-  
-    background: #202126;
-  }
-  
-  
-  .vergleich-bild-box img {
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-  
-    display: block;
-  
-    transition:
-      transform 0.6s ease,
-      filter 0.6s ease;
-  }
-  
-  
-  .vergleich-bild-box:hover img {
-    transform: scale(1.04);
-  }
-  
-  
-  /* Verlauf auf dem Foto */
-  
-  .vergleich-bild-box::after {
-    content: "";
-  
-    position: absolute;
-  
-    inset: 0;
-  
-    background:
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.88) 0%,
-        rgba(0, 0, 0, 0.25) 45%,
-        transparent 72%
-      );
-  
-    pointer-events: none;
-  }
-  
-  
-  /* =========================================
-     AUTO-NAME AUF BILD
-     ========================================= */
-  
-  .vergleich-bild-overlay {
-    position: absolute;
-  
-    left: 28px;
-    bottom: 25px;
-  
-    z-index: 2;
-  }
-  
-  
-  .vergleich-bild-overlay p {
-    margin: 0 0 5px;
-  
-    font-size: 13px;
-  
-    opacity: 0.7;
-  
-    text-transform: uppercase;
-  
-    letter-spacing: 0.12em;
-  }
-  
-  
-  .vergleich-bild-overlay h2 {
-    margin: 0;
-  
-    font-size: clamp(27px, 2.3vw, 40px);
-  
-    line-height: 1;
-  }
-  
-  
-  /* =========================================
-     VS
-     ========================================= */
-  
+
   .vergleich-vs {
-    height: clamp(360px, 25vw, 470px);
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    padding: 8px 0;
   }
-  
-  
+
   .vergleich-vs span {
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    width: 58px;
-    height: 58px;
-  
-    border-radius: 50%;
-  
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  
-    background: rgba(255, 255, 255, 0.04);
-  
-    backdrop-filter: blur(8px);
-  
-    font-size: 16px;
-  
-    font-weight: 700;
-  
-    letter-spacing: 0.1em;
+    width: 52px;
+    height: 52px;
   }
-  
-  
-  /* =========================================
-     SPECS-TABELLE
-     ========================================= */
-  
+
+  .vergleich-bild-box {
+    height: 350px;
+  }
+
   .vergleich-specs {
-    width: 100%;
-  
-    margin-top: 32px;
-  
-    border-collapse: collapse;
+    margin-bottom: 30px;
   }
-  
-  
-  .vergleich-specs tr {
-    border-bottom:
-      1px solid rgba(255, 255, 255, 0.15);
-  }
-  
-  
-  .vergleich-specs tr:first-child {
-    border-top:
-      1px solid rgba(255, 255, 255, 0.15);
-  }
-  
-  
-  .vergleich-specs th,
-  .vergleich-specs td {
-    padding: 21px 6px;
-  
-    border: none;
-  
-    text-align: left;
-  
-    vertical-align: middle;
-  }
-  
-  
-  .vergleich-specs th {
-    width: 45%;
-  
-    padding-right: 20px;
-  
-    font-size: 15px;
-  
-    font-weight: 500;
-  
-    color: rgba(255, 255, 255, 0.58);
-  }
-  
-  
-  .vergleich-specs td {
-    font-size: 16px;
-  
-    font-weight: 600;
-  
-    color: #ffffff;
-  }
-  
-  
-  /* =========================================
-     BEWERTUNG DER VERGLEICHSWERTE
-     ========================================= */
-  
-  /* Bester Wert */
-  
-  .vergleich-specs td.wert-gut {
-    color: #58d68d;
-  
-    font-weight: 700;
-  }
-  
-  
-  /* Zweitbester Wert */
-  
-  .vergleich-specs td.wert-mittel {
-    color: #f0ad4e;
-  
-    font-weight: 700;
-  }
-  
-  
-  /* Schwächster Wert */
-  
-  .vergleich-specs td.wert-schlecht {
-    color: #ff6957;
-  
-    font-weight: 700;
-  }
-  
-  
-  /* =========================================
-     TABLET
-     ========================================= */
-  
-  @media (max-width: 1200px) {
-  
-    .vergleich-grid {
-      grid-template-columns:
-        minmax(0, 1fr)
-        55px
-        minmax(0, 1fr)
-        55px
-        minmax(0, 1fr);
-    }
-  
-  
-    .vergleich-bild-box,
-    .vergleich-vs {
-      height: 300px;
-    }
-  
-  
-    .vergleich-vs span {
-      width: 46px;
-      height: 46px;
-  
-      font-size: 13px;
-    }
-  
-  
-    .vergleich-specs th,
-    .vergleich-specs td {
-      display: block;
-  
-      width: 100%;
-  
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-  
-    .vergleich-specs th {
-      padding-bottom: 5px;
-    }
-  
-  
-    .vergleich-specs td {
-      padding-top: 0;
-    }
-  
-  }
-  
-  
-  /* =========================================
-     HANDY
-     ========================================= */
-  
-  @media (max-width: 800px) {
-  
-    .vergleich-seite {
-      padding:
-        110px
-        20px
-        60px;
-    }
-  
-  
-    .vergleich-grid {
-      grid-template-columns: 1fr;
-  
-      gap: 25px;
-    }
-  
-  
-    .vergleich-vs {
-      height: auto;
-  
-      padding: 8px 0;
-    }
-  
-  
-    .vergleich-vs span {
-      width: 52px;
-      height: 52px;
-    }
-  
-  
-    .vergleich-bild-box {
-      height: 350px;
-    }
-  
-  
-    .vergleich-specs {
-      margin-bottom: 30px;
-    }
-  
-  }
+}
