@@ -23,10 +23,6 @@
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="barrierefreiheit.css" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
   </head>
 
   <body>
@@ -107,6 +103,15 @@
               <div class="DATENTEXT">
                 <dt>Leistung</dt>
               <dd>650 PS / 478 kW</dd>
+              <audio id="motorsound" preload="metadata">
+  <source
+    src="Galerie section/Coldstart.mp3"
+    type="audio/mpeg"
+  />
+</audio>
+               <button class="button2" type="button">
+                Motor Starten
+                </button>
               </div>
             </div>
 
@@ -428,6 +433,14 @@ schliessenButton.addEventListener("click", () => {
 
 dialog.addEventListener("close", () => {
   dialog.querySelector("video").pause();
+});
+
+const motorsound = document.querySelector("#motorsound");
+const motorsoundButton = document.querySelector(".button2");
+
+motorsoundButton.addEventListener("click", () => {
+  motorsound.currentTime = 0;
+  motorsound.play();
 });
 </script>
  </body>

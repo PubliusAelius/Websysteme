@@ -145,7 +145,7 @@
      ================================================== */
   
   .specs-bereich {
-    width: min(90%, 1000px);
+    width: min(90%, 1400px);
   
     margin: 0 auto;
   
@@ -189,6 +189,71 @@
   
     font-weight: 600;
   }
+
+
+  /* ==================================================
+     NEU: 3D-MODELL AUF DER SPECS-SEITE
+     ================================================== */
+
+  .specs-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(22rem, 0.9fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .specs-layout > * {
+    min-width: 0;
+  }
+
+  .specs-modell {
+    position: sticky;
+    top: 2rem;
+    margin: 0;
+    padding: 1rem;
+    overflow: hidden;
+    background-color: #1c1f24;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+  }
+
+  .specs-modell model-viewer {
+    display: block;
+    width: 100%;
+    height: 38rem;
+  }
+
+  .specs-modell figcaption {
+    margin-top: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .specs-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .specs-tabelle {
+      table-layout: fixed;
+    }
+
+    .specs-tabelle th,
+    .specs-tabelle td {
+      overflow-wrap: anywhere;
+    }
+
+    .specs-modell {
+      position: static;
+    }
+
+    .specs-modell model-viewer {
+      height: min(70vh, 32rem);
+    }
+  }
+
+  /* ENDE: 3D-MODELL AUF DER SPECS-SEITE */
   
   
   /* ==================================================

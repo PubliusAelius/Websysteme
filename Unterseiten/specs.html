@@ -20,6 +20,13 @@
 
     <link rel="stylesheet" href="unterseiten.css" />
     <link rel="stylesheet" href="../barrierefreiheit.css" />
+
+    <!-- NEU: 3D-MODELL – lädt die benötigte model-viewer-Komponente -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <!-- ENDE: 3D-MODELL -->
   </head>
 
   <body>
@@ -57,6 +64,9 @@
            
 
       <section class="specs-bereich">
+
+        <!-- NEU: 3D-MODELL – Tabelle links, Porsche-Modell rechts -->
+        <div class="specs-layout">
 
         <table class="specs-tabelle">
 
@@ -125,6 +135,22 @@
           </tbody>
 
         </table>
+
+          <figure class="specs-modell">
+            <model-viewer
+              src="../assets/models/porsche3d.glb"
+              alt="Drehbares 3D-Modell eines Porsche 911"
+              camera-controls
+              auto-rotate
+              shadow-intensity="1"
+              environment-image="neutral"
+              touch-action="pan-y"
+            ></model-viewer>
+
+            <figcaption>Zum Drehen ziehen</figcaption>
+          </figure>
+        </div>
+        <!-- ENDE: 3D-MODELL -->
 
       </section>
 
