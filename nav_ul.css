@@ -27,6 +27,34 @@ nav a {
   text-decoration: none;
 }
 
+nav ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Linie unter dem Navigationspunkt */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #f2f0eb;
+  transition: width 0.3s ease;
+}
+
+
+nav ul li a:hover {
+  color: rgb(82, 57, 222);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
 .projektname {
   display: flex;
   font-family: "Cormorant Garamond", serif;
@@ -36,10 +64,7 @@ nav a {
 }
 
 
-/* =========================================
-   HANDY
-   Desktop darüber bleibt unverändert
-   ========================================= */
+
 
    @media(max-width:700px){
     nav{
