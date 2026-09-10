@@ -17,6 +17,7 @@
       width: 100%;
       overflow: hidden;
       scroll-behavior: smooth;
+      overscroll-behavior-x: contain;
     }
     
     .galerie-bilder {
@@ -29,14 +30,10 @@
     
     .galerie-seite {
       position: relative;
-    
       flex: 0 0 100%;
-    
-      width: 100%;
-    
+      
       padding: 0 3.5rem;
-    
-      scroll-margin-top: 2rem;
+      
     }
     
     
@@ -148,33 +145,48 @@
     }
     
     
-    /* ==================================================
-       RESPONSIVE
-       ================================================== */
-    
-    
-    
-    
-       @media (max-width: 600px) {
+   
+     
+  @media (max-width: 600px) {
+  #Galerie {
+    /* Gleicher linker Rand wie im mobilen Header. */
+    padding: 4rem 5vw;
+  }
 
-        #Galerie {
-          padding: 4rem 1rem;
-        }
-      
-        #Galerie h2 {
-          margin-bottom: 2rem;
-        }
-      
-        .galerie-bilder figure {
-          flex: 0 0 100%;
-          padding: 0 2.5rem;
-        }
-      
-        .galerie-bilder img {
-          height: 18rem;
-        }
-      
-        .galerie-pfeil {
-          display: none;
-        }
-      }
+  #Galerie h2 {
+    margin-bottom: 2rem;
+  }
+
+  /*
+   * Auf dem Handy werden die Pfeile durch horizontales Wischen ersetzt.
+   */
+  .galerie-fenster {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;/*?*/
+  }
+  .galerie-fenster::-webkit-scrollbar {
+    display: none;
+  }
+
+  .galerie-seite {
+    flex: 0 0 100%;
+    padding: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Vier Bilder pro Seite werden als übersichtliches 2×2-Grid gezeigt. */
+  .galerie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .galerie-grid img {
+    height: clamp(8rem, 38vw, 11rem);
+  }
+
+  .galerie-pfeil {
+    display: none;
+  }
+}

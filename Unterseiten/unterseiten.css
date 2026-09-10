@@ -1,7 +1,18 @@
 /*Unterseiten.css soll alle CSS sachen für die Unterseitenen enthalten*/
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+/* Verhindert seitliches Verschieben der gesamten Unterseite. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -159,7 +170,7 @@ body {
   text-align: center;
 }
 
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   .specs-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -180,8 +191,31 @@ body {
   .specs-modell model-viewer {
     height: min(70vh, 32rem);
   }
-}
+}/* Auf Handys und schmalen Tablets stehen Tabelle und 3D-Modell untereinander. */
+@media (max-width: 900px) {
+  .specs-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
+  .specs-tabelle {
+    table-layout: fixed;
+  }
+
+  .specs-tabelle th,
+  .specs-tabelle td {
+    overflow-wrap: anywhere;
+  }
+
+  /* Sticky wird hier ausgeschaltet, weil das Modell unter der Tabelle steht. */
+  .specs-modell {
+    position: static;
+  }
+
+  .specs-modell model-viewer {
+    height: min(70vh, 32rem);
+  }
+}
 /*Ab hier Innenraum*/
 
 .interior-hero {
@@ -250,6 +284,7 @@ body {
   scroll-snap-type: x mandatory;/* ist für das einrasten*/
   scroll-behavior: smooth;
   scrollbar-width: thin;
+  overscroll-behavior-x: contain;
 }
 
 .interior-slide {
@@ -340,9 +375,9 @@ body {
 }
 
 .vergleich-zurueck {
-  position: absolute;
+  /*position: absolute;
   top: 2rem;
-  left: 2rem;
+  left: 2rem;*/
   z-index: 10;
 }
 

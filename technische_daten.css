@@ -40,6 +40,7 @@ background: linear-gradient(
   border-radius: 1rem;
   min-height: 9rem;
   background-color:  #171a1d;
+  min-width: 0;
   
 }
 
@@ -53,7 +54,8 @@ background: linear-gradient(
   margin-bottom: 0.1rem;
 }
 .DATENTEXT {
-  
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .DATENTEXT dl {
@@ -182,7 +184,7 @@ background: linear-gradient(
   }
 
   .datengrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 

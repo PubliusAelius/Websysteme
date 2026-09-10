@@ -146,26 +146,64 @@ nav ul li a:hover::after {
 }
 
 
-   @media(max-width:700px){
-    nav{
-    flex-direction:column;
-    align-items: flex-start;
-    gap: 1rem;
-    }
-    nav ul{
-    flex-wrap: nowrap;
-    width: 100%;
-    gap: 0.65rem 1.2rem;
-    font-size: 0.7rem;
-    }
-    .LOGO{
-    width:4rem;
-    height:4rem;
-
-    }
-
-    header {
-      padding: 0.65rem 1.2rem;
-    }
+  @media (max-width: 700px) {
+  header {
+    /* 5vw entspricht auch ungefähr deinem Inhaltsabstand weiter unten. */
+    padding: 0.75rem 5vw;
   }
-  
+
+  nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "projekt sprache"
+      "navigation navigation";
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 1rem;
+  }
+
+  .projektname {
+    grid-area: projekt;
+    min-width: 0;
+    gap: 0.5rem;
+    font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+    line-height: 1.1;
+  }
+  .projektname span {
+    min-width: 0;
+  }
+
+  .LOGO {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  /*
+   * Dadurch können Navigation und Sprachschalter getrennte
+   * Positionen im nav-Grid bekommen, obwohl beide in .rechts liegen.
+   */
+  .rechts {
+    display: contents;
+  }
+
+  .language-switch {
+    grid-area: sprache;
+    justify-self: end;
+    gap: 0.35rem;
+  }
+
+  .language-label {
+    font-size: 0.85rem;
+  }
+
+  nav ul {
+    grid-area: navigation;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}

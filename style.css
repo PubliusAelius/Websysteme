@@ -1,6 +1,18 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
+/* Verhindert, dass die komplette Seite seitlich verschoben werden kann. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
 h1,
 h2 {
   font-family: "Cormorant Garamond", serif;
