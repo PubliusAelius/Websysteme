@@ -170,28 +170,7 @@ body {
   text-align: center;
 }
 
-/*@media (max-width: 600px) {
-  .specs-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
 
-  .specs-tabelle {
-    table-layout: fixed;
-  }
-
-  .specs-tabelle th,
-  .specs-tabelle td {
-    overflow-wrap: anywhere;
-  }
-
-  .specs-modell {
-    position: static;
-  }
-
-  .specs-modell model-viewer {
-    height: min(70vh, 32rem);
-  }
-}/* Auf Handys und schmalen Tablets stehen Tabelle und 3D-Modell untereinander. */
 @media (max-width: 900px) {
   .specs-layout {
     grid-template-columns: 1fr;
